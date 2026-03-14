@@ -12,13 +12,13 @@ export const Services: React.FC = () => {
     {
       ...t.services.s1,
       icon: <HomeIcon className="w-8 h-8" />,
-      image: t.services.s1.image || "https://picsum.photos/seed/home-vastu-1/1200/800",
+      image: "/assets/home.png",
       color: "bg-sand/10"
     },
     {
       ...t.services.s2,
       icon: <Briefcase className="w-8 h-8" />,
-      image: "/assets/17.jpeg",
+      image: "/assets/13.jpeg",
       color: "bg-bronze/5"
     },
     {
@@ -114,7 +114,7 @@ export const Services: React.FC = () => {
                             </Link>
                           )}
                         </div>
-                        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+                        <div className={`relative rounded-xl overflow-hidden shadow-lg ${i === 1 ? 'aspect-[4/3]' : 'aspect-video'}`}>
                           <img 
                             src={service.image} 
                             alt={service.title} 
