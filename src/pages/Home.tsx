@@ -4,6 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { CompassSVG } from '../components/CompassSVG';
 import { ArrowRight } from 'lucide-react';
+import { Play } from 'lucide-react';
 import { VideoPopup } from '../components/VideoPopup';
 
 export const Home: React.FC = () => {
@@ -296,6 +297,28 @@ export const Home: React.FC = () => {
 
       {/* Video Popup */}
       <VideoPopup videoId="gcbDHGlBWOs" trigger="button" />
+
+      {/* Floating Video Message */}
+      <motion.div
+        animate={{
+          opacity: [0, 1, 1, 0, 0],
+          y: [20, 0, 0, 20, 20],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          times: [0, 0.25, 0.5, 0.75, 1], // 3s fade in, 3s stay, 3s fade out, 3s hidden
+          ease: "easeInOut",
+        }}
+        className="fixed bottom-24 right-8 z-40 bg-bronze text-softwhite px-6 py-4 rounded-xl shadow-2xl max-w-[280px] cursor-pointer"
+        onClick={() => document.querySelector('button[aria-label="Watch video"]')?.dispatchEvent(new Event('click'))}
+      >
+        <div className="flex items-center gap-3">
+          <Play className="w-5 h-5 fill-current flex-shrink-0" />
+          <p className="text-sm font-medium leading-snug">Have a look at the Cosmiq Report</p>
+        </div>
+        <div className="absolute -bottom-2 right-6 w-4 h-4 bg-bronze rotate-45" />
+      </motion.div>
     </div>
   );
 };
