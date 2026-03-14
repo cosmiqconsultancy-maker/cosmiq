@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,19 @@ import { Home as HomeIcon, Briefcase, Settings, ArrowRight, Check, ChevronDown }
 export const Services: React.FC = () => {
   const { t } = useLanguage();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const serviceRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const handleExpand = (i: number) => {
+    if (expandedIndex === i) {
+      setExpandedIndex(null);
+    } else {
+      setExpandedIndex(i);
+      // Scroll to the service header after a short delay to allow expansion
+      setTimeout(() => {
+        serviceRefs.current[i]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  };
 
   const services = [
     {
@@ -41,11 +54,12 @@ export const Services: React.FC = () => {
           {services.map((service, i) => (
             <div 
               key={i}
+              ref={el => { serviceRefs.current[i] = el; }}
               className={`rounded-2xl overflow-hidden border border-charcoal/5 transition-all ${expandedIndex === i ? 'shadow-2xl' : 'hover:shadow-lg'}`}
             >
               <button 
-                onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
-                className={`w-full flex flex-col md:flex-row items-center gap-8 p-8 text-left transition-colors ${expandedIndex === i ? 'bg-softwhite' : service.color}`}
+                onClick={() => handleExpand(i)}
+                className={`w-full flex flex-col md:flex-row items-center gap-4 md:gap-8 p-6 md:p-8 text-left transition-colors ${expandedIndex === i ? 'bg-softwhite' : service.color}`}
               >
                 <div className="flex items-center gap-6 flex-1">
                   <div className="w-16 h-16 rounded-full bg-bronze/10 text-bronze flex items-center justify-center flex-shrink-0">

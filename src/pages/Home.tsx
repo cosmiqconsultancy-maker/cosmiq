@@ -103,8 +103,8 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6">
+              <div className="relative aspect-[4/3] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/assets/15.jpeg" 
                   alt="Architectural space" 
@@ -113,7 +113,7 @@ export const Home: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-charcoal/10" />
               </div>
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-[4/3] lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/assets/author-philosophy.png" 
                   alt="Philosophy" 
