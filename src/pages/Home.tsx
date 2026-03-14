@@ -33,7 +33,7 @@ export const Home: React.FC = () => {
           <div className="relative h-[50vh] lg:h-[70vh]">
             <div className="absolute inset-0 bg-sand/20 rounded-2xl overflow-hidden">
               <img 
-                src="/src/assets/author-landpage.jpg" 
+                src="/assets/author-landpage.jpg" 
                 alt="Founder of Cosmiq Consulting" 
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000"
                 referrerPolicy="no-referrer"
@@ -55,7 +55,7 @@ export const Home: React.FC = () => {
       {/* Vastu Shastra Section */}
       <section className="py-20 bg-softwhite relative">
         <img 
-          src="/src/assets/13.jpeg" 
+          src="/assets/13.jpeg" 
           alt="" 
           className="absolute inset-0 w-full h-full object-cover opacity-30"
           referrerPolicy="no-referrer"
@@ -106,7 +106,7 @@ export const Home: React.FC = () => {
             <div className="space-y-6">
               <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/src/assets/15.jpeg" 
+                  src="/assets/15.jpeg" 
                   alt="Architectural space" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -115,7 +115,7 @@ export const Home: React.FC = () => {
               </div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/src/assets/author-philosophy.png" 
+                  src="/assets/author-philosophy.png" 
                   alt="Philosophy" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -154,14 +154,14 @@ export const Home: React.FC = () => {
                   className="flex h-full w-[200%]"
                 >
                   {[
-                    "/src/assets/12.jpeg",
-                    "/src/assets/13.jpeg",
-                    "/src/assets/14.jpeg",
-                    "/src/assets/15.jpeg",
-                    "/src/assets/16.jpeg",
-                    "/src/assets/17.jpeg",
-                    "/src/assets/18.jpeg",
-                    "/src/assets/11.jpeg"
+                    "/assets/12.jpeg",
+                    "/assets/13.jpeg",
+                    "/assets/14.jpeg",
+                    "/assets/15.jpeg",
+                    "/assets/16.jpeg",
+                    "/assets/17.jpeg",
+                    "/assets/18.jpeg",
+                    "/assets/11.jpeg"
                   ].map((src, idx) => (
                     <div key={idx} className="w-1/4 h-full px-2">
                       <img 

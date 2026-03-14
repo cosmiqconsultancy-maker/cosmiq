@@ -18,13 +18,13 @@ export const Services: React.FC = () => {
     {
       ...t.services.s2,
       icon: <Briefcase className="w-8 h-8" />,
-      image: "/src/assets/17.jpeg",
+      image: "/assets/17.jpeg",
       color: "bg-bronze/5"
     },
     {
       ...t.services.s3,
       icon: <Settings className="w-8 h-8" />,
-      image: "/src/assets/18.jpeg",
+      image: "/assets/18.jpeg",
       color: "bg-stone/10"
     }
   ];
