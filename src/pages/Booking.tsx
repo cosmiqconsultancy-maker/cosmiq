@@ -43,24 +43,25 @@ export const Booking: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side: Form */}
-          <div className="bg-softwhite p-10 md:p-16 rounded-3xl shadow-2xl border border-charcoal/5 flex flex-col justify-center">
-            {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center space-y-6 py-12">
-                <CheckCircle2 className="w-20 h-20 text-bronze" />
-                <h2 className="text-3xl font-display font-medium">Thank You</h2>
-                <p className="text-charcoal/60">Your request has been sent. I will get back to you shortly to schedule our assessment.</p>
-                <button 
-                  onClick={() => setSubmitted(false)}
-                  className="text-bronze font-bold tracking-widest uppercase text-xs hover:underline"
-                >
-                  Send another request
-                </button>
-              </div>
-            ) : (
-              <>
-                <h2 className="text-3xl font-display font-medium mb-10">{t.booking.title}</h2>
-                <form onSubmit={handleSubmit} className="space-y-8">
+          {/* Right Side: Form and Calendly */}
+          <div className="flex flex-col gap-8">
+            {/* Contact Form Block */}
+            <div className="bg-softwhite p-10 md:p-12 rounded-3xl shadow-xl border border-charcoal/5">
+              <h2 className="text-2xl font-display font-medium mb-8">{t.booking.title}</h2>
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center text-center space-y-6 py-8">
+                  <CheckCircle2 className="w-16 h-16 text-bronze" />
+                  <h3 className="text-2xl font-display font-medium">Thank You</h3>
+                  <p className="text-charcoal/60">Your request has been sent. I will get back to you shortly.</p>
+                  <button 
+                    onClick={() => setSubmitted(false)}
+                    className="text-bronze font-bold tracking-widest uppercase text-xs hover:underline"
+                  >
+                    Send another request
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold tracking-widest uppercase text-charcoal/40">{t.booking.form.name}</label>
                     <input 
@@ -69,7 +70,7 @@ export const Booking: React.FC = () => {
                       className="w-full bg-transparent border-b border-charcoal/20 py-3 focus:border-bronze outline-none transition-colors"
                     />
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-bold tracking-widest uppercase text-charcoal/40">{t.booking.form.email}</label>
                       <input 
@@ -87,34 +88,33 @@ export const Booking: React.FC = () => {
                       />
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-bold tracking-widest uppercase text-charcoal/40">{t.booking.form.dob}</label>
-                      <input 
-                        type="text" 
-                        placeholder="DD.MM.YYYY"
-                        className="w-full bg-transparent border-b border-charcoal/20 py-3 focus:border-bronze outline-none transition-colors"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-bold tracking-widest uppercase text-charcoal/40">{t.booking.form.pob}</label>
-                      <input 
-                        type="text" 
-                        className="w-full bg-transparent border-b border-charcoal/20 py-3 focus:border-bronze outline-none transition-colors"
-                      />
-                    </div>
-                  </div>
-                  
                   <button 
                     type="submit"
-                    className="w-full bg-charcoal text-softwhite py-5 rounded-sm text-xs font-bold tracking-widest uppercase hover:bg-bronze transition-all flex items-center justify-center group"
+                    className="w-full bg-charcoal text-softwhite py-4 rounded-sm text-xs font-bold tracking-widest uppercase hover:bg-bronze transition-all flex items-center justify-center group"
                   >
                     {t.booking.form.submit}
                     <Send className="ml-3 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </button>
                 </form>
-              </>
-            )}
+              )}
+            </div>
+
+            {/* Calendly Widget Block */}
+            <div className="bg-softwhite rounded-3xl shadow-xl border border-charcoal/5 overflow-hidden">
+              <div className="p-6 bg-bronze/10 border-b border-charcoal/5">
+                <h3 className="text-xl font-display font-medium">Schedule Your Free Consultation</h3>
+                <p className="text-charcoal/60 text-sm mt-1">Pick a time that works best for you</p>
+              </div>
+              <div className="p-0">
+                <iframe 
+                  src="https://calendly.com/signup90593/30min" 
+                  width="100%" 
+                  height="600" 
+                  frameBorder="0"
+                  title="Calendly Scheduling"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
