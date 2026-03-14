@@ -305,10 +305,10 @@ export const Home: React.FC = () => {
           y: [20, 0, 0, 20, 20],
         }}
         transition={{
-          duration: 12,
+          duration: 7,
           repeat: Infinity,
-          times: [0, 0.25, 0.5, 0.75, 1], // 3s fade in, 3s stay, 3s fade out, 3s hidden
-          ease: "easeInOut",
+          times: [0, 0.07, 0.64, 0.71, 1], // 0.5s fade in, 4s stay, 0.5s fade out, 2s wait
+          ease: "easeOut",
         }}
         className="fixed bottom-24 right-8 z-40 bg-bronze text-softwhite px-6 py-4 rounded-xl shadow-2xl max-w-[280px] cursor-pointer"
         onClick={() => document.querySelector('button[aria-label="Watch video"]')?.dispatchEvent(new Event('click'))}
