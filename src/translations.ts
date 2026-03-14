@@ -211,12 +211,12 @@ export const translations = {
       title: 'Book Your Consultation',
       processTitle: 'How the Consultation Works',
       steps: [
-        { title: 'Book Your Free 20-Minute Assessment', desc: '' },
-        { title: 'Initial Consultation Call', desc: 'During the call we understand the client’s situation and goals.' },
-        { title: 'Share Your Floor Plan', desc: 'The client shares the floor plan and property details.' },
-        { title: 'Directional and Layout Analysis', desc: 'Analysis of spatial orientation and room placement.' },
-        { title: 'Site Visit (if required)', desc: '' },
-        { title: 'Personalized Recommendations', desc: '' }
+        { title: 'Book Your Free 20-Minute Assessment', desc: 'Schedule a complimentary introductory call to discuss your space and understand your requirements. We\'ll explore how spatial alignment can benefit your specific situation.' },
+        { title: 'Initial Consultation Call', desc: 'During the call we understand the client\'s situation and goals. We discuss your concerns, current challenges, and what you hope to achieve through spatial alignment.' },
+        { title: 'Share Your Floor Plan', desc: 'The client shares the floor plan and property details. This can be architectural drawings, photos, videos, or a virtual walkthrough of your space.' },
+        { title: 'Directional and Layout Analysis', desc: 'Analysis of spatial orientation and room placement. We examine how directions, entrances, and room positioning affect energy flow and functionality.' },
+        { title: 'Site Visit (if required)', desc: 'For on-site consultations, we conduct a physical assessment of your space. This allows precise measurements and identification of specific alignment opportunities.' },
+        { title: 'Personalized Recommendations', desc: 'Receive detailed, practical recommendations tailored to your space. These include layout adjustments, directional alignments, and color recommendations that don\'t require structural changes.' }
       ],
       goal: 'Goal: Optimize the space for wellbeing, productivity and balance.',
       form: {
@@ -437,12 +437,12 @@ export const translations = {
       title: 'Buchen Sie Ihre Beratung',
       processTitle: 'So funktioniert die Beratung',
       steps: [
-        { title: 'Buchen Sie Ihre kostenlose 20-minütige Analyse', desc: '' },
-        { title: 'Erstberatungsgespräch', desc: 'Während des Gesprächs verstehen wir die Situation und die Ziele des Kunden.' },
-        { title: 'Teilen Sie Ihren Grundriss', desc: 'Der Kunde teilt den Grundriss und die Objektdetails mit.' },
-        { title: 'Richtungs- und Layoutanalyse', desc: 'Analyse der räumlichen Orientierung und Raumplatzierung.' },
-        { title: 'Besichtigung vor Ort (falls erforderlich)', desc: '' },
-        { title: 'Personalisierte Empfehlungen', desc: '' }
+        { title: 'Buchen Sie Ihre kostenlose 20-minütige Analyse', desc: 'Vereinbaren Sie einen kostenlosen einführenden Anruf, um Ihren Raum zu besprechen und Ihre Anforderungen zu verstehen. Wir erkunden, wie räumliche Ausrichtung Ihre spezifische Situation verbessern kann.' },
+        { title: 'Erstberatungsgespräch', desc: 'Während des Gesprächs verstehen wir die Situation und die Ziele des Kunden. Wir besprechen Ihre Bedenken, aktuellen Herausforderungen und was Sie durch räumliche Ausrichtung erreichen möchten.' },
+        { title: 'Teilen Sie Ihren Grundriss', desc: 'Der Kunde teilt den Grundriss und die Objektdetails mit. Dies können architektonische Zeichnungen, Fotos, Videos oder ein virtueller Rundgang durch Ihren Raum sein.' },
+        { title: 'Richtungs- und Layoutanalyse', desc: 'Analyse der räumlichen Orientierung und Raumplatzierung. Wir untersuchen, wie Richtungen, Eingänge und Raumpositionierung den Energiefluss und die Funktionalität beeinflussen.' },
+        { title: 'Besichtigung vor Ort (falls erforderlich)', desc: 'Bei Vor-Ort-Beratungen führen wir eine physische Beurteilung Ihres Raums durch. Dies ermöglicht präzise Messungen und die Identifizierung spezifischer Ausrichtungsmöglichkeiten.' },
+        { title: 'Personalisierte Empfehlungen', desc: 'Erhalten Sie detaillierte, praktische Empfehlungen, die auf Ihren Raum zugeschnitten sind. Diese umfassen Layout-Anpassungen, Richtungsausrichtungen und Farbempfehlungen, die keine strukturellen Änderungen erfordern.' }
       ],
       goal: 'Ziel: Den Raum für Wohlbefinden, Produktivität und Ausgewogenheit optimieren.',
       form: {
