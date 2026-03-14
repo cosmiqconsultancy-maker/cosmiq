@@ -57,7 +57,7 @@ export const Home: React.FC = () => {
         <img 
           src="/assets/13.jpeg" 
           alt="" 
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-10"
           referrerPolicy="no-referrer"
         />
         <div className="max-w-7xl mx-auto px-6 relative z-10">

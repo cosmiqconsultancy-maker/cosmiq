@@ -24,7 +24,7 @@ export const Services: React.FC = () => {
     {
       ...t.services.s3,
       icon: <Settings className="w-8 h-8" />,
-      image: "/assets/18.jpeg",
+      image: "/assets/15.jpeg",
       color: "bg-stone/10"
     }
   ];
@@ -114,14 +114,35 @@ export const Services: React.FC = () => {
                             </Link>
                           )}
                         </div>
-                        <div className={`relative rounded-xl overflow-hidden shadow-lg ${i === 1 ? 'aspect-[4/3]' : 'aspect-video'}`}>
-                          <img 
-                            src={service.image} 
-                            alt={service.title} 
-                            className="w-full h-full object-cover"
-                            referrerPolicy="no-referrer"
-                          />
-                        </div>
+                        {i === 0 ? (
+                          <div className="space-y-4">
+                            <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+                              <img 
+                                src="/assets/home.png" 
+                                alt={service.title} 
+                                className="w-full h-full object-cover"
+                                referrerPolicy="no-referrer"
+                              />
+                            </div>
+                            <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+                              <img 
+                                src="/assets/home1.png" 
+                                alt={`${service.title} - Additional`}
+                                className="w-full h-full object-cover"
+                                referrerPolicy="no-referrer"
+                              />
+                            </div>
+                          </div>
+                        ) : (
+                          <div className={`relative rounded-xl overflow-hidden shadow-lg ${i === 1 ? 'aspect-[4/3]' : 'aspect-video'}`}>
+                            <img 
+                              src={service.image} 
+                              alt={service.title} 
+                              className="w-full h-full object-cover"
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
+                        )}
                       </div>
 
                       {service.blueprintSections && (

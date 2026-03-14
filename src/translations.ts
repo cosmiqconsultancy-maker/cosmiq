@@ -157,6 +157,10 @@ export const translations = {
         title: 'Personalised Cosmiq Report',
         tagline: 'Your CosmiQ Blueprint',
         quote: 'Discover the hidden map of your life, written in the stars, numbers and directions.',
+        description: 'A comprehensive 130-140 page personalized guide combining Astrology, Numerology, and Vastu wisdom tailored specifically for you. This unique blueprint reveals your life path, career potential, relationship patterns, and spatial alignment recommendations.',
+        features: [
+          { title: 'Complete Life Blueprint', desc: 'Detailed analysis of your birth chart revealing career paths, relationship dynamics, health patterns, wealth potential, and personal growth opportunities based on planetary positions at your birth.' }
+        ],
         blueprintSections: [
           { icon: '✦', title: 'Astrological Blueprint', desc: 'Decode your core identity, power vector and hidden emotional architecture with the guidance of your planets.' },
           { icon: '∞', title: 'Numerology Profile', desc: 'Insights based on your Name and Date of Birth.' },
@@ -379,6 +383,10 @@ export const translations = {
         title: 'Personalisierter Cosmiq-Bericht',
         tagline: 'Ihr CosmiQ Blueprint',
         quote: 'Entdecken Sie die verborgene Karte Ihres Lebens, geschrieben in den Sternen, Zahlen und Richtungen.',
+        description: 'Ein umfassender 130-140 seitiger personalisierter Leitfaden, der Astrologie, Numerologie und Vastu-Weisheit speziell für Sie kombiniert. Dieser einzigartige Blueprint enthüllt Ihren Lebensweg, Karrierepotenzial, Beziehungsmuster und räumliche Ausrichtungsempfehlungen.',
+        features: [
+          { title: 'Kompletter Lebens-Blueprint', desc: 'Detaillierte Analyse Ihres Geburtshoroskops, die Karrierewege, Beziehungsdynamiken, Gesundheitsmuster, Vermögenspotenzial und persönliche Wachstumschancen basierend auf den Planetenpositionen bei Ihrer Geburt enthüllt.' }
+        ],
         blueprintSections: [
           { icon: '✦', title: 'Astrologischer Blueprint', desc: 'Entschlüsseln Sie Ihre Kernidentität und emotionale Architektur.' },
           { icon: '∞', title: 'Numerologie-Profil', desc: 'Einblicke basierend auf Ihrem Namen und Geburtsdatum.' },
