@@ -128,82 +128,169 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Problems Section */}
-      <section className="py-32 bg-charcoal text-softwhite overflow-hidden">
+      <section className="py-20 bg-charcoal text-softwhite overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-20">
-            <div className="lg:col-span-5">
-              <h2 className="text-4xl md:text-5xl font-display font-medium mb-6">{t.problems.title}</h2>
-              <p className="text-softwhite/60 leading-relaxed">
-                Spatial imbalances often manifest as subtle but persistent challenges in our daily lives. 
-                Recognizing these signs is the first step toward alignment.
-              </p>
-            </div>
-            
-            {/* Image Carousel */}
-            <div className="lg:col-span-7 relative h-64 md:h-[400px] rounded-2xl overflow-hidden">
-              <div className="flex h-full w-full overflow-hidden">
-                <motion.div 
-                  animate={{ 
-                    x: ["0%", "-50%"] 
-                  }}
-                  transition={{ 
-                    duration: 30, 
-                    repeat: Infinity, 
-                    ease: "linear" 
-                  }}
-                  className="flex h-full w-[200%]"
-                >
-                  {[
-                    "/assets/12.jpeg",
-                    "/assets/13.jpeg",
-                    "/assets/14.jpeg",
-                    "/assets/15.jpeg",
-                    "/assets/16.jpeg",
-                    "/assets/17.jpeg",
-                    "/assets/18.jpeg",
-                    "/assets/11.jpeg"
-                  ].map((src, idx) => (
-                    <div key={idx} className="w-1/4 h-full px-2">
-                      <img 
-                        src={src} 
-                        alt="Architectural Alignment" 
-                        className="w-full h-full object-cover rounded-xl"
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
-                  ))}
-                </motion.div>
-              </div>
-              <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-charcoal to-transparent z-10" />
-              <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-charcoal to-transparent z-10" />
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-medium mb-6">{t.problems.title}</h2>
+            <p className="text-softwhite/60 leading-relaxed max-w-2xl mx-auto">
+              Spatial imbalances often manifest as subtle but persistent challenges in our daily lives. 
+              Recognizing these signs is the first step toward alignment.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {t.problems.items.map((item, i) => (
-              <div
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              // Sleep icon
+              <svg className="w-6 h-6 text-bronze" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+              </svg>,
+              // Focus/Target icon
+              <svg className="w-6 h-6 text-bronze" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>,
+              // Heart/Stress icon
+              <svg className="w-6 h-6 text-bronze" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>,
+              // People/Connection icon
+              <svg className="w-6 h-6 text-bronze" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>,
+              // Growth/Chart icon
+              <svg className="w-6 h-6 text-bronze" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>,
+              // Creative/Lightbulb icon
+              <svg className="w-6 h-6 text-bronze" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            ].map((icon, i) => (
+              <motion.div
                 key={i}
-                className="bg-softwhite/5 border border-softwhite/10 p-10 rounded-xl hover:bg-softwhite/10 transition-colors group"
+                className="bg-softwhite/5 border border-softwhite/10 p-6 rounded-xl hover:bg-softwhite/10 transition-colors group"
+                whileHover={{ y: -3 }}
+                transition={{ duration: 0.3 }}
               >
-                <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center mb-8 group-hover:bg-bronze/40 transition-colors">
-                  <span className="text-bronze font-display font-bold">{i + 1}</span>
-                </div>
-                <h3 className="text-2xl font-display font-medium mb-4">{item.title}</h3>
+                <motion.div 
+                  className="w-10 h-10 rounded-full bg-bronze/20 flex items-center justify-center mb-5 group-hover:bg-bronze/40 transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {icon}
+                </motion.div>
+                <h3 className="text-xl font-display font-medium mb-3">{t.problems.items[i].title}</h3>
                 <p className="text-softwhite/60 leading-relaxed text-sm">
-                  {item.desc}
+                  {t.problems.items[i].desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <div className="mt-20 text-center">
+          <div className="mt-12 text-center">
             <Link
               to="/booking"
-              className="inline-flex items-center bg-bronze text-softwhite px-10 py-5 rounded-sm text-sm font-bold tracking-widest uppercase hover:bg-softwhite hover:text-charcoal transition-all"
+              className="inline-flex items-center bg-bronze text-softwhite px-8 py-4 rounded-sm text-sm font-bold tracking-widest uppercase hover:bg-softwhite hover:text-charcoal transition-all"
             >
               {t.hero.cta}
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-softwhite overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-12">
+          <h2 className="text-4xl md:text-5xl font-display font-medium text-center mb-4">What Our Clients Say</h2>
+          <p className="text-charcoal/60 text-center max-w-2xl mx-auto">Real experiences from people who transformed their spaces and lives</p>
+        </div>
+        
+        <div className="relative">
+          <motion.div 
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="flex gap-6 w-[200%]"
+          >
+            {[...Array(2)].map((_, setIndex) => (
+              <React.Fragment key={setIndex}>
+                {/* German Client 1 - Munich */}
+                <div className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
+                      <span className="text-bronze font-bold">SK</span>
+                    </div>
+                    <div>
+                      <h4 className="font-display font-medium">Sarah Klein</h4>
+                      <p className="text-xs text-charcoal/60">Munich, Germany</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-charcoal/70 leading-relaxed">"Amitabh's consultation completely changed our home office setup. My productivity has increased significantly, and I feel more focused throughout the day. The Vastu adjustments were simple but incredibly effective."</p>
+                  <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
+                </div>
+
+                {/* German Client 2 - Munich */}
+                <div className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
+                      <span className="text-bronze font-bold">MW</span>
+                    </div>
+                    <div>
+                      <h4 className="font-display font-medium">Markus Weber</h4>
+                      <p className="text-xs text-charcoal/60">Munich, Germany</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-charcoal/70 leading-relaxed">"After implementing Amitabh's recommendations, my sleep quality improved dramatically. I was skeptical at first, but the bedroom repositioning made a real difference. Highly recommended for anyone struggling with restlessness."</p>
+                  <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
+                </div>
+
+                {/* German Client 3 - Munich */}
+                <div className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
+                      <span className="text-bronze font-bold">LF</span>
+                    </div>
+                    <div>
+                      <h4 className="font-display font-medium">Laura Fischer</h4>
+                      <p className="text-xs text-charcoal/60">Munich, Germany</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-charcoal/70 leading-relaxed">"Our family relationships have become much more harmonious since the consultation. The living room adjustments created a more peaceful atmosphere. Amitabh understood our needs perfectly and provided practical solutions."</p>
+                  <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
+                </div>
+
+                {/* Indian Client 1 */}
+                <div className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
+                      <span className="text-bronze font-bold">RP</span>
+                    </div>
+                    <div>
+                      <h4 className="font-display font-medium">Raj Patel</h4>
+                      <p className="text-xs text-charcoal/60">Bangalore, India</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-charcoal/70 leading-relaxed">"As someone familiar with Vastu, I was impressed by Amitabh's modern approach. He blended traditional wisdom with contemporary living seamlessly. My business has seen noticeable growth since the office consultation."</p>
+                  <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
+                </div>
+
+                {/* Indian Client 2 */}
+                <div className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
+                      <span className="text-bronze font-bold">AS</span>
+                    </div>
+                    <div>
+                      <h4 className="font-display font-medium">Anita Sharma</h4>
+                      <p className="text-xs text-charcoal/60">Delhi, India</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-charcoal/70 leading-relaxed">"Amitabh's Cosmiq Report was incredibly detailed and accurate. The personalized blueprint helped me understand my strengths and challenges. His guidance on spatial alignment has brought clarity and balance to my life."</p>
+                  <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
+                </div>
+              </React.Fragment>
+            ))}
+          </motion.div>
         </div>
       </section>
 

@@ -211,12 +211,12 @@ export const translations = {
       title: 'Book Your Consultation',
       processTitle: 'How the Consultation Works',
       steps: [
-        { title: 'Book Your Free 20-Minute Assessment', desc: 'Schedule a complimentary introductory call to discuss your space and understand your requirements. We\'ll explore how spatial alignment can benefit your specific situation.' },
-        { title: 'Initial Consultation Call', desc: 'During the call we understand the client\'s situation and goals. We discuss your concerns, current challenges, and what you hope to achieve through spatial alignment.' },
-        { title: 'Share Your Floor Plan', desc: 'The client shares the floor plan and property details. This can be architectural drawings, photos, videos, or a virtual walkthrough of your space.' },
-        { title: 'Directional and Layout Analysis', desc: 'Analysis of spatial orientation and room placement. We examine how directions, entrances, and room positioning affect energy flow and functionality.' },
-        { title: 'Site Visit (if required)', desc: 'For on-site consultations, we conduct a physical assessment of your space. This allows precise measurements and identification of specific alignment opportunities.' },
-        { title: 'Personalized Recommendations', desc: 'Receive detailed, practical recommendations tailored to your space. These include layout adjustments, directional alignments, and color recommendations that don\'t require structural changes.' }
+        { title: 'Book Your Free 20-Minute Assessment', desc: 'Schedule a complimentary introductory call to discuss your space and understand your requirements. We\'ll explore how spatial alignment can benefit your specific situation. This no-obligation conversation helps us understand your goals and determine the best consultation approach for your needs. We\'ll discuss your current challenges, whether it\'s sleep issues, productivity concerns, or relationship harmony, and explain how Vastu principles can help create positive changes in your environment.' },
+        { title: 'Initial Consultation Call', desc: 'During the call we understand the client\'s situation and goals. We discuss your concerns, current challenges, and what you hope to achieve through spatial alignment. This deep-dive conversation covers your lifestyle, daily routines, and specific areas where you feel stuck or uncomfortable. We explore your relationship with your space and identify key areas for improvement, whether it\'s your bedroom layout affecting sleep quality, workspace orientation impacting productivity, or overall energy flow in your home.' },
+        { title: 'Share Your Floor Plan', desc: 'The client shares the floor plan and property details. This can be architectural drawings, photos, videos, or a virtual walkthrough of your space. For remote consultations, clear photos from each corner of rooms and a simple hand-drawn layout work perfectly. For on-site visits, we\'ll schedule a convenient time. The more details you provide about room usage, furniture placement, and specific concerns, the more precise our analysis can be. We\'ll also note natural light sources, existing color schemes, and any architectural features.' },
+        { title: 'Directional and Layout Analysis', desc: 'Analysis of spatial orientation and room placement. We examine how directions, entrances, and room positioning affect energy flow and functionality. Using Vastu Shastra principles combined with modern architectural understanding, we identify energy blockages and alignment opportunities. We analyze the eight directions, five elements balance, and how your space supports your personal and professional goals. This includes checking bedroom orientation for restful sleep, kitchen placement for health, and workspace positioning for productivity.' },
+        { title: 'Site Visit (if required)', desc: 'For on-site consultations, we conduct a physical assessment of your space. This allows precise measurements, compass readings for accurate directional alignment, and identification of specific energy flow patterns. We observe natural light throughout the day, check ventilation, and assess how furniture placement affects movement and energy. Physical visits are especially valuable for complex spaces, commercial properties, or when major layout adjustments are being considered. We bring specialized tools for directional analysis and space energy assessment.' },
+        { title: 'Personalized Recommendations', desc: 'Receive detailed, practical recommendations tailored to your space. These include layout adjustments, directional alignments, color recommendations, and element balancing that don\'t require structural changes. You\'ll get a comprehensive report with prioritized action steps, from immediate quick fixes to longer-term improvements. Recommendations cover furniture repositioning, color scheme adjustments, decluttering strategies, and simple additions like plants or elements that enhance positive energy. We also provide guidance on maintaining the alignment and periodic check-ins to ensure lasting benefits.' }
       ],
       goal: 'Goal: Optimize the space for wellbeing, productivity and balance.',
       form: {
@@ -231,8 +231,10 @@ export const translations = {
     footer: {
       contact: 'Contact',
       address: 'Munich, Germany',
-      email: 'info@cosmiqconsulting.com'
-    }
+      email: 'info@cosmiqconsulting.com',
+      phone: '+49 176 70496449',
+      instagram: 'https://www.instagram.com/cosmiq_consulting'
+    },
   },
   de: {
     nav: {
@@ -437,12 +439,12 @@ export const translations = {
       title: 'Buchen Sie Ihre Beratung',
       processTitle: 'So funktioniert die Beratung',
       steps: [
-        { title: 'Buchen Sie Ihre kostenlose 20-minütige Analyse', desc: 'Vereinbaren Sie einen kostenlosen einführenden Anruf, um Ihren Raum zu besprechen und Ihre Anforderungen zu verstehen. Wir erkunden, wie räumliche Ausrichtung Ihre spezifische Situation verbessern kann.' },
-        { title: 'Erstberatungsgespräch', desc: 'Während des Gesprächs verstehen wir die Situation und die Ziele des Kunden. Wir besprechen Ihre Bedenken, aktuellen Herausforderungen und was Sie durch räumliche Ausrichtung erreichen möchten.' },
-        { title: 'Teilen Sie Ihren Grundriss', desc: 'Der Kunde teilt den Grundriss und die Objektdetails mit. Dies können architektonische Zeichnungen, Fotos, Videos oder ein virtueller Rundgang durch Ihren Raum sein.' },
-        { title: 'Richtungs- und Layoutanalyse', desc: 'Analyse der räumlichen Orientierung und Raumplatzierung. Wir untersuchen, wie Richtungen, Eingänge und Raumpositionierung den Energiefluss und die Funktionalität beeinflussen.' },
-        { title: 'Besichtigung vor Ort (falls erforderlich)', desc: 'Bei Vor-Ort-Beratungen führen wir eine physische Beurteilung Ihres Raums durch. Dies ermöglicht präzise Messungen und die Identifizierung spezifischer Ausrichtungsmöglichkeiten.' },
-        { title: 'Personalisierte Empfehlungen', desc: 'Erhalten Sie detaillierte, praktische Empfehlungen, die auf Ihren Raum zugeschnitten sind. Diese umfassen Layout-Anpassungen, Richtungsausrichtungen und Farbempfehlungen, die keine strukturellen Änderungen erfordern.' }
+        { title: 'Buchen Sie Ihre kostenlose 20-minütige Analyse', desc: 'Vereinbaren Sie einen kostenlosen einführenden Anruf, um Ihren Raum zu besprechen und Ihre Anforderungen zu verstehen. Wir erkunden, wie räumliche Ausrichtung Ihre spezifische Situation verbessern kann. Dieses unverbindliche Gespräch hilft uns, Ihre Ziele zu verstehen und den besten Beratungsansatz für Ihre Bedürfnisse zu bestimmen. Wir besprechen Ihre aktuellen Herausforderungen, ob es Schlafprobleme, Produktivitätsbedenken oder Bezieungsharmonie sind, und erklären, wie Vastu-Prinzipien positive Veränderungen in Ihrer Umgebung schaffen können.' },
+        { title: 'Erstberatungsgespräch', desc: 'Während des Gesprächs verstehen wir die Situation und die Ziele des Kunden. Wir besprechen Ihre Bedenken, aktuellen Herausforderungen und was Sie durch räumliche Ausrichtung erreichen möchten. Dieses vertiefte Gespräch deckt Ihren Lebensstil, tägliche Routinen und spezifische Bereiche ab, in denen Sie sich festgefahren oder unwohl fühlen. Wir erkunden Ihre Beziehung zu Ihrem Raum und identifizieren Schlüsselbereiche für Verbesserungen.' },
+        { title: 'Teilen Sie Ihren Grundriss', desc: 'Der Kunde teilt den Grundriss und die Objektdetails mit. Dies können architektonische Zeichnungen, Fotos, Videos oder ein virtueller Rundgang durch Ihren Raum sein. Für Fernberatungen funktionieren klare Fotos aus jeder Zimmerecke und eine einfache handgezeichnete Skizze perfekt. Je mehr Details Sie über Raumnutzung, Möbelplatzierung und spezifische Bedenken angeben, desto präziser kann unsere Analyse sein.' },
+        { title: 'Richtungs- und Layoutanalyse', desc: 'Analyse der räumlichen Orientierung und Raumplatzierung. Wir untersuchen, wie Richtungen, Eingänge und Raumpositionierung den Energiefluss und die Funktionalität beeinflussen. Unter Verwendung von Vastu-Shastra-Prinzipien kombiniert mit modernem architektonischem Verständnis identifizieren wir Energieblockaden und Ausrichtungsmöglichkeiten. Wir analysieren die acht Richtungen, das Gleichgewicht der fünf Elemente und wie Ihr Raum Ihre persönlichen und beruflichen Ziele unterstützt.' },
+        { title: 'Besichtigung vor Ort (falls erforderlich)', desc: 'Bei Vor-Ort-Beratungen führen wir eine physische Beurteilung Ihres Raums durch. Dies ermöglicht präzise Messungen, Kompassablesungen für genaue Richtungsausrichtung und die Identifizierung spezifischer Energieflussmuster. Wir beobachten das natürliche Licht im Laufe des Tages, prüfen die Belüftung und bewerten, wie die Möbelplatzierung Bewegung und Energie beeinflusst.' },
+        { title: 'Personalisierte Empfehlungen', desc: 'Erhalten Sie detaillierte, praktische Empfehlungen, die auf Ihren Raum zugeschnitten sind. Diese umfassen Layout-Anpassungen, Richtungsausrichtungen, Farbempfehlungen und Elementeausgewogenheit, die keine strukturellen Änderungen erfordern. Sie erhalten einen umfassenden Bericht mit priorisierten Maßnahmen, von sofortigen schnellen Lösungen bis zu langfristigen Verbesserungen.' }
       ],
       goal: 'Ziel: Den Raum für Wohlbefinden, Produktivität und Ausgewogenheit optimieren.',
       form: {
@@ -457,7 +459,9 @@ export const translations = {
     footer: {
       contact: 'Kontakt',
       address: 'München, Deutschland',
-      email: 'info@cosmiqconsulting.com'
+      email: 'info@cosmiqconsulting.com',
+      phone: '+49 176 70496449',
+      instagram: 'https://www.instagram.com/cosmiq_consulting'
     }
   }
 };

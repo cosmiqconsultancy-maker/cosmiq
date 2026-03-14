@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { Instagram, Phone } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -44,6 +45,21 @@ export const Footer: React.FC = () => {
               <ul className="space-y-2 text-sm text-softwhite/60">
                 <li>{t.footer.address}</li>
                 <li>{t.footer.email}</li>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  {t.footer.phone}
+                </li>
+                <li>
+                  <a 
+                    href={t.footer.instagram} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:text-softwhite transition-colors"
+                  >
+                    <Instagram className="w-4 h-4" />
+                    Instagram
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
