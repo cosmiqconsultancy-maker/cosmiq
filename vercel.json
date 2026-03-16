@@ -38,6 +38,24 @@
           "value": "nosniff"
         }
       ]
+    },
+    {
+      "source": "/src/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(js|ts|tsx|jsx)$)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript"
+        }
+      ]
     }
   ]
 }
