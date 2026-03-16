@@ -1,0 +1,127 @@
+Privacy Policy (Datenschutzerklärung)
+1. General Information
+The protection of your personal data is very important to us. We treat your personal data
+confidentially and in accordance with the statutory data protection regulations and this privacy
+policy.
+When you use this website, various personal data may be collected. Personal data is data that
+can be used to personally identify you. This privacy policy explains what data we collect and
+what we use it for.
+2. Responsible Party (Controller)
+The responsible party for data processing on this website is:
+CosmiQ Consulting
+Köglweg 15
+82024 Taufkirchen
+Germany
+Phone: +49 176 7049 6449
+Email: amitabh@cosmiqconsulting.com
+The controller is the natural or legal person who determines the purposes and means of the
+processing of personal data.
+3. Hosting
+This website is hosted by:
+Hostinger
+Hostinger International Ltd.
+61 Lordou Vironos Street
+6023 Larnaca
+Cyprus
+When you visit our website, the hosting provider may collect log files including:
+● IP address
+● browser type and version
+● operating system used
+● referrer URL
+● time of server request
+This data is collected to ensure the stable and secure operation of the website.
+The legal basis is Art. 6(1)(f) GDPR (legitimate interest in secure website operation).
+4. Data Collection on Our Website
+Server Log Files
+The hosting provider automatically collects and stores information in server log files that your
+browser transmits automatically.
+These include:
+● Browser type and version
+● Operating system
+● Referrer URL
+● Hostname of the accessing computer
+● Time of server request
+● IP address
+This data is not merged with other data sources.
+5. Contact via Email or Phone
+If you contact us via email or phone, your request including all resulting personal data will be
+stored and processed for the purpose of handling your request.
+This includes:
+● Name
+● Email address
+● Phone number
+● Inquiry details
+The legal basis for processing is:
+● Art. 6(1)(b) GDPR – processing necessary for contractual communication
+● Art. 6(1)(f) GDPR – legitimate interest in responding to inquiries
+Your data will remain with us until the purpose for storing the data no longer applies or you
+request deletion.
+6. Appointment Booking
+For booking consultations through our website we use:
+Calendly
+Provider: Calendly LLC, Atlanta, USA.
+When you book an appointment, the following data may be processed:
+● Name
+● Email address
+● Appointment time
+● Additional information you provide
+This information is required to organize and conduct the consultation.
+The legal basis for processing is Art. 6(1)(b) GDPR (contractual services).
+For more information, please see Calendly’s privacy policy.
+7. Cookies
+Our website uses cookies. Cookies are small text files stored on your device that help improve
+the user experience.
+Cookies may be:
+● Session cookies (deleted after the visit)
+● Permanent cookies (remain stored until deleted)
+Cookies may be used for:
+● website functionality
+● analytics
+● marketing
+The legal basis for the storage of cookies is:
+● Art. 6(1)(f) GDPR (legitimate interest)
+● Art. 6(1)(a) GDPR if consent is required
+You can configure your browser to inform you about the use of cookies or disable them entirely.
+8. Analytics and Advertising
+Google Analytics
+This website uses:
+Google Analytics
+Provider: Google
+Google Analytics uses cookies that allow an analysis of your use of the website.
+Information collected may include:
+● IP address
+● device information
+● pages visited
+● time spent on website
+● user interactions
+Google may transfer this information to servers in the United States.
+The processing takes place only with your consent according to Art. 6(1)(a) GDPR.
+You can withdraw your consent at any time.
+Google Ads
+This website uses:
+Google Ads
+Google Ads allows us to display advertisements in Google search results and across the
+Google advertising network.
+Google Ads may use cookies and tracking technologies to measure advertising performance.
+The legal basis is Art. 6(1)(a) GDPR (user consent).
+9. Social Media
+Our website may contain links to social media platforms such as:
+● LinkedIn
+If you visit these platforms, data processing is carried out by the respective provider according
+to their privacy policies.
+We have no influence on how these platforms process personal data.
+10. Your Rights Under GDPR
+You have the following rights regarding your personal data:
+● Right to access your stored data
+● Right to correction of incorrect data
+● Right to deletion of data
+● Right to restriction of processing
+● Right to data portability
+● Right to object to processing
+● Right to lodge a complaint with a supervisory authority
+To exercise these rights, please contact us at:
+amitabh@cosmiqconsulting.com
+11. SSL Encryption
+For security reasons and to protect confidential content, this website uses SSL encryption.
+You can recognize an encrypted connection by the https:// prefix and the lock icon in your
+browser address bar.

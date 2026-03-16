@@ -13,6 +13,10 @@ import { Home } from './pages/Home';
 import { Services } from './pages/Services';
 import { Blogs } from './pages/Blogs';
 import { Booking } from './pages/Booking';
+import { Impressum } from './pages/Impressum';
+import { Privacy } from './pages/Privacy';
+import { Terms } from './pages/Terms';
+import { CookieConsent } from './pages/CookieConsent';
 import { AnimatePresence, motion } from 'motion/react';
 
 function ScrollToTop() {
@@ -84,6 +88,58 @@ function AppContent() {
                   transition={{ duration: 0.5 }}
                 >
                   <Booking />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/impressum" 
+              element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Impressum />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/privacy" 
+              element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Privacy />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/terms" 
+              element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Terms />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/cookies" 
+              element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <CookieConsent />
                 </motion.div>
               } 
             />

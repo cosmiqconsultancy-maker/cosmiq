@@ -6,6 +6,7 @@ import { CompassSVG } from '../components/CompassSVG';
 import { ArrowRight } from 'lucide-react';
 import { Play } from 'lucide-react';
 import { VideoPopup } from '../components/VideoPopup';
+import { CookieConsentPopup } from '../components/CookieConsentPopup';
 
 export const Home: React.FC = () => {
   const { t } = useLanguage();
@@ -104,25 +105,14 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6">
-              <div className="relative aspect-[4/3] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/assets/15.jpeg" 
-                  alt="Architectural space" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-charcoal/10" />
-              </div>
-              <div className="relative aspect-[4/3] lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/assets/author-philosophy.png" 
-                  alt="Philosophy" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-charcoal/10" />
-              </div>
+            <div className="relative aspect-[2/3] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src="/assets/22.jpeg" 
+                alt="Philosophy" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-charcoal/10" />
             </div>
           </div>
         </div>
@@ -295,30 +285,8 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Video Popup */}
-      <VideoPopup videoId="gcbDHGlBWOs" trigger="button" />
+      <CookieConsentPopup />
 
-      {/* Floating Video Message */}
-      <motion.div
-        animate={{
-          opacity: [0, 1, 1, 0, 0],
-          y: [20, 0, 0, 20, 20],
-        }}
-        transition={{
-          duration: 7,
-          repeat: Infinity,
-          times: [0, 0.07, 0.64, 0.71, 1], // 0.5s fade in, 4s stay, 0.5s fade out, 2s wait
-          ease: "easeOut",
-        }}
-        className="fixed bottom-24 right-8 z-40 bg-bronze text-softwhite px-6 py-4 rounded-xl shadow-2xl max-w-[280px] cursor-pointer"
-        onClick={() => document.querySelector('button[aria-label="Watch video"]')?.dispatchEvent(new Event('click'))}
-      >
-        <div className="flex items-center gap-3">
-          <Play className="w-5 h-5 fill-current flex-shrink-0" />
-          <p className="text-sm font-medium leading-snug">Have a look at the Cosmiq Report</p>
-        </div>
-        <div className="absolute -bottom-2 right-6 w-4 h-4 bg-bronze rotate-45" />
-      </motion.div>
-    </div>
+      </div>
   );
 };

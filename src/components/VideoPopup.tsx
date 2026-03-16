@@ -30,17 +30,6 @@ export const VideoPopup: React.FC<VideoPopupProps> = ({
 
   return (
     <>
-      {/* Floating Play Button */}
-      {trigger === 'button' && (
-        <button
-          onClick={openPopup}
-          className="fixed bottom-8 right-8 z-50 bg-bronze text-softwhite p-4 rounded-full shadow-2xl hover:bg-charcoal transition-all group animate-pulse"
-          aria-label="Watch video"
-        >
-          <Play className="w-6 h-6 fill-current group-hover:scale-110 transition-transform" />
-        </button>
-      )}
-
       {/* Popup Overlay */}
       {isOpen && (
         <div 

@@ -127,7 +127,7 @@ export const translations = {
         pricingFooter: 'Not sure which consultation you need? Start with the free 20-minute consultation.'
       },
       s2: {
-        title: 'Office & Commercial Vastu',
+        title: 'Office & Commercial Layout Consultation',
         description: 'Optimise workplace energy for productivity, prosperity and wellbeing — practical, modern Vastu solutions for offices, shops and commercial buildings.',
         features: [
           { title: 'Low Productivity in the Workspace', desc: 'Is your team working hard but results are slow? Does the office feel stagnant or unbalanced? Workspace layout can influence decision-making, leadership presence and overall business flow.' },
@@ -233,8 +233,268 @@ export const translations = {
       address: 'Munich, Germany',
       email: 'info@cosmiqconsulting.com',
       phone: '+49 176 70496449',
-      instagram: 'https://www.instagram.com/cosmiq_consulting'
+      instagram: 'https://www.instagram.com/cosmiq_consulting',
+      impressum: 'Legal Notice',
+      privacy: 'Privacy Policy',
+      terms: 'Terms & Conditions',
+      cookies: 'Cookie Consent'
     },
+    cookieConsent: {
+      title: 'Cookies & Privacy Settings',
+      text1: 'We use cookies and similar technologies to improve your browsing experience, analyse website traffic and show relevant advertisements.',
+      text2: 'By clicking "Accept All", you agree to the use of analytics and marketing cookies, including services such as Google Analytics and Google Ads.',
+      text3: 'You can manage your preferences at any time or withdraw your consent via the cookie settings.',
+      text4: 'For more information, please read our Privacy Policy.'
+    },
+    privacy: {
+      title: 'Privacy Policy (Datenschutzerklärung)',
+      intro: 'The protection of your personal data is very important to us. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy.',
+      dataUse: 'When you use this website, various personal data may be collected. Personal data is data that can be used to personally identify you. This privacy policy explains what data we collect and what we use it for.',
+      controller: {
+        title: '1. Responsible Party (Controller)',
+        text: 'The responsible party for data processing on this website is:',
+        company: 'CosmiQ Consulting',
+        address: 'Köglweg 15',
+        city: '82024 Taufkirchen',
+        country: 'Germany',
+        phone: 'Phone: +49 176 7049 6449',
+        email: 'Email: amitabh@cosmiqconsulting.com',
+        note: 'The controller is the natural or legal person who determines the purposes and means of the processing of personal data.'
+      },
+      hosting: {
+        title: '2. Hosting',
+        provider: 'This website is hosted by:',
+        company: 'Hostinger International Ltd.',
+        address: '61 Lordou Vironos Street',
+        city: '6023 Larnaca',
+        country: 'Cyprus',
+        data: 'When you visit our website, the hosting provider may collect log files including:',
+        items: [
+          'IP address',
+          'Browser type and version',
+          'Operating system used',
+          'Referrer URL',
+          'Time of server request'
+        ],
+        purpose: 'This data is collected to ensure the stable and secure operation of the website.',
+        legal: 'The legal basis is Art. 6(1)(f) GDPR (legitimate interest in secure website operation).'
+      },
+      serverLogs: {
+        title: '3. Data Collection on Our Website',
+        subtitle: 'Server Log Files',
+        text: 'The hosting provider automatically collects and stores information in server log files that your browser transmits automatically.',
+        items: [
+          'Browser type and version',
+          'Operating system',
+          'Referrer URL',
+          'Hostname of the accessing computer',
+          'Time of server request',
+          'IP address'
+        ],
+        note: 'This data is not merged with other data sources.'
+      },
+      contact: {
+        title: '4. Contact via Email or Phone',
+        text: 'If you contact us via email or phone, your request including all resulting personal data will be stored and processed for the purpose of handling your request.',
+        data: 'This includes:',
+        items: [
+          'Name',
+          'Email address',
+          'Phone number',
+          'Inquiry details'
+        ],
+        legal: 'The legal basis for processing is:',
+        legalItems: [
+          'Art. 6(1)(b) GDPR – processing necessary for contractual communication',
+          'Art. 6(1)(f) GDPR – legitimate interest in responding to inquiries'
+        ],
+        retention: 'Your data will remain with us until the purpose for storing the data no longer applies or you request deletion.'
+      },
+      calendly: {
+        title: '5. Appointment Booking',
+        provider: 'For booking consultations through our website we use:',
+        company: 'Calendly LLC, Atlanta, USA',
+        data: 'When you book an appointment, the following data may be processed:',
+        items: [
+          'Name',
+          'Email address',
+          'Appointment time',
+          'Additional information you provide'
+        ],
+        purpose: 'This information is required to organize and conduct the consultation.',
+        legal: 'The legal basis for processing is Art. 6(1)(b) GDPR (contractual services).',
+        link: 'For more information, please see Calendly\'s privacy policy.'
+      },
+      cookies: {
+        title: '6. Cookies',
+        text: 'Our website uses cookies. Cookies are small text files stored on your device that help improve the user experience.',
+        types: 'Cookies may be:',
+        typeItems: [
+          'Session cookies (deleted after the visit)',
+          'Permanent cookies (remain stored until deleted)'
+        ],
+        purposes: 'Cookies may be used for:',
+        purposeItems: [
+          'Website functionality',
+          'Analytics',
+          'Marketing'
+        ],
+        legal: 'The legal basis for the storage of cookies is:',
+        legalItems: [
+          'Art. 6(1)(f) GDPR (legitimate interest)',
+          'Art. 6(1)(a) GDPR if consent is required'
+        ],
+        browser: 'You can configure your browser to inform you about the use of cookies or disable them entirely.'
+      },
+      analytics: {
+        title: '7. Analytics and Advertising',
+        googleAnalytics: {
+          title: 'Google Analytics',
+          text: 'This website uses Google Analytics. Provider: Google.',
+          data: 'Google Analytics uses cookies that allow an analysis of your use of the website.',
+          items: [
+            'IP address',
+            'Device information',
+            'Pages visited',
+            'Time spent on website',
+            'User interactions'
+          ],
+          transfer: 'Google may transfer this information to servers in the United States.',
+          legal: 'The processing takes place only with your consent according to Art. 6(1)(a) GDPR.',
+          withdraw: 'You can withdraw your consent at any time.'
+        },
+        googleAds: {
+          title: 'Google Ads',
+          text: 'This website uses Google Ads. Google Ads allows us to display advertisements in Google search results and across the Google advertising network.',
+          data: 'Google Ads may use cookies and tracking technologies to measure advertising performance.',
+          legal: 'The legal basis is Art. 6(1)(a) GDPR (user consent).'
+        }
+      },
+      socialMedia: {
+        title: '8. Social Media',
+        text: 'Our website may contain links to social media platforms such as:',
+        platforms: [
+          'LinkedIn'
+        ],
+        note: 'If you visit these platforms, data processing is carried out by the respective provider according to their privacy policies.',
+        disclaimer: 'We have no influence on how these platforms process personal data.'
+      },
+      rights: {
+        title: '9. Your Rights Under GDPR',
+        text: 'You have the following rights regarding your personal data:',
+        items: [
+          'Right to access your stored data',
+          'Right to correction of incorrect data',
+          'Right to deletion of data',
+          'Right to restriction of processing',
+          'Right to data portability',
+          'Right to object to processing',
+          'Right to lodge a complaint with a supervisory authority'
+        ],
+        contact: 'To exercise these rights, please contact us at:',
+        email: 'amitabh@cosmiqconsulting.com'
+      },
+      ssl: {
+        title: '10. SSL Encryption',
+        text: 'For security reasons and to protect confidential content, this website uses SSL encryption.',
+        recognition: 'You can recognize an encrypted connection by the https:// prefix and the lock icon in your browser address bar.'
+      }
+    },
+    impressum: {
+      title: 'Legal Notice (Impressum)',
+      section1: {
+        title: 'Information according to §5 TMG',
+        company: 'CosmiQ Consulting',
+        address: 'Köglweg 15',
+        city: '82024 Taufkirchen',
+        country: 'Germany'
+      },
+      representative: {
+        title: 'Represented by:',
+        name: 'Amitabh Shekhar'
+      },
+      contact: {
+        title: 'Contact:',
+        phone: 'Phone: +49 176 7049 6449',
+        email: 'Email: amitabh@cosmiqconsulting.com'
+      },
+      responsible: {
+        title: 'Responsible for content according to §55 Abs. 2 RStV:',
+        name: 'Amitabh Shekhar',
+        company: 'CosmiQ Consulting',
+        address: 'Köglweg 15',
+        city: '82024 Taufkirchen',
+        country: 'Germany'
+      },
+      dispute: {
+        title: 'EU Dispute Resolution',
+        text1: 'The European Commission provides a platform for online dispute resolution (ODR):',
+        link: 'https://ec.europa.eu/consumers/odr/',
+        text2: 'We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.'
+      },
+      liability: {
+        title: 'Liability for content',
+        text: 'The contents of our pages were created with the greatest care. However, we cannot guarantee the accuracy, completeness or timeliness of the content.'
+      },
+      links: {
+        title: 'Liability for links',
+        text: 'Our website may contain links to external websites of third parties. We have no influence on the contents of those websites, therefore we cannot assume any liability for those external contents.'
+      },
+      copyright: {
+        title: 'Copyright',
+        text: 'The content and works created by the site operator on these pages are subject to copyright law. Duplication, processing, distribution or any form of commercialization beyond the scope of copyright law requires the prior written consent of the respective author.'
+      }
+    },
+    terms: {
+      title: 'Terms & Conditions (AGB)',
+      intro: 'AGB – Allgemeine Geschäftsbedingungen\nCosmiQ Consulting',
+      scope: {
+        title: '1. Scope of Application',
+        text: 'These General Terms and Conditions (AGB) apply to all consulting services provided by CosmiQ Consulting, Köglweg 15, 82024 Taufkirchen, Germany. By booking a consultation or service through our website or booking system, the client agrees to these terms and conditions.'
+      },
+      services: {
+        title: '2. Services',
+        text: 'CosmiQ Consulting provides consulting services in the areas of business consulting, coaching, and advisory services. The scope of the service is determined individually between CosmiQ Consulting and the client, either through direct communication or via the booking platform.'
+      },
+      booking: {
+        title: '3. Booking of Appointments',
+        text: 'Appointments can be booked online via our booking system or by direct contact. Once an appointment is confirmed, the booking becomes binding.'
+      },
+      payment: {
+        title: '4. Payment',
+        text: 'Payment for consulting services must be made in advance unless otherwise agreed. Payments may be processed via payment service providers such as PayPal or bank transfer.'
+      },
+      cancellation: {
+        title: '5. Cancellation Policy',
+        text: 'Appointments may be cancelled or rescheduled free of charge up to 24 hours before the scheduled appointment time. If a cancellation is made less than 24 hours before the appointment or the client does not attend the appointment, CosmiQ Consulting reserves the right to charge the full consultation fee.'
+      },
+      liability: {
+        title: '6. Liability',
+        text: 'CosmiQ Consulting provides consulting services based on experience and professional knowledge. However, no guarantee is given for specific outcomes or results. Liability for damages is limited to cases of intentional misconduct or gross negligence.'
+      },
+      confidentiality: {
+        title: '7. Confidentiality',
+        text: 'All information shared by the client during consultations will be treated as strictly confidential and will not be disclosed to third parties without consent unless required by law.'
+      },
+      dataProtection: {
+        title: '8. Data Protection',
+        text: 'Personal data collected in connection with bookings or consultations will be processed in accordance with our Privacy Policy (Datenschutzerklärung).'
+      },
+      applicableLaw: {
+        title: '9. Applicable Law',
+        text: 'The laws of the Federal Republic of Germany apply.'
+      },
+      jurisdiction: {
+        title: '10. Place of Jurisdiction',
+        text: 'The place of jurisdiction for all disputes arising from this contractual relationship is Munich, Germany.'
+      },
+      companyInfo: {
+        title: 'CosmiQ Consulting',
+        address: 'Köglweg 15',
+        city: '82024 Taufkirchen',
+        country: 'Germany'
+      }
+    }
   },
   de: {
     nav: {
@@ -355,7 +615,7 @@ export const translations = {
         pricingFooter: 'Sind Sie sich unsicher, welche Beratung Sie brauchen? Beginnen Sie mit der kostenlosen 20-minütigen Erstberatung.'
       },
       s2: {
-        title: 'Büro & Gewerbe Vastu',
+        title: 'Büro & Gewerbe-Layout-Beratung',
         description: 'Optimieren Sie die Arbeitsplatzenergie für Produktivität, Wohlstand und Wohlbefinden — praktische, moderne Vastu-Lösungen für Büros, Geschäfte und gewerbliche Gebäude.',
         features: [
           { title: 'Geringe Produktivität am Arbeitsplatz', desc: 'Arbeitet Ihr Team hart, aber die Ergebnisse sind langsam? Fühlt sich das Büro stagnierend oder unausgeglichen an? Das Arbeitsplatzlayout kann Entscheidungsfindung, Führungspräsenz und den gesamten Geschäftsablauf beeinflussen.' },
@@ -461,7 +721,267 @@ export const translations = {
       address: 'München, Deutschland',
       email: 'info@cosmiqconsulting.com',
       phone: '+49 176 70496449',
-      instagram: 'https://www.instagram.com/cosmiq_consulting'
+      instagram: 'https://www.instagram.com/cosmiq_consulting',
+      impressum: 'Impressum',
+      privacy: 'Datenschutz',
+      terms: 'AGB',
+      cookies: 'Cookie-Einwilligung'
+    },
+    cookieConsent: {
+      title: 'Cookies & Datenschutzeinstellungen',
+      text1: 'Wir verwenden Cookies und ähnliche Technologien, um Ihr Browsererlebnis zu verbessern, Website-Verkehr zu analysieren und relevante Werbung zu zeigen.',
+      text2: 'Durch Klick auf "Alle akzeptieren" stimmen Sie der Verwendung von Analyse- und Marketing-Cookies zu, einschließlich Diensten wie Google Analytics und Google Ads.',
+      text3: 'Sie können Ihre Präferenzen jederzeit verwalten oder Ihre Einwilligung über die Cookie-Einstellungen zurückziehen.',
+      text4: 'Weitere Informationen finden Sie in unserer Datenschutzerklärung.'
+    },
+    privacy: {
+      title: 'Datenschutzerklärung',
+      intro: 'Der Schutz Ihrer persönlichen Daten ist uns sehr wichtig. Wir behandeln Ihre persönlichen Daten vertraulich und in Übereinstimmung mit den gesetzlichen Datenschutzbestimmungen und dieser Datenschutzerklärung.',
+      dataUse: 'Bei der Nutzung dieser Website können verschiedene persönliche Daten gesammelt werden. Persönliche Daten sind Daten, die zur persönlichen Identifizierung verwendet werden können. Diese Datenschutzerklärung erklärt, welche Daten wir sammeln und wofür wir sie verwenden.',
+      controller: {
+        title: '1. Verantwortliche Stelle (Verantwortlicher)',
+        text: 'Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:',
+        company: 'CosmiQ Consulting',
+        address: 'Köglweg 15',
+        city: '82024 Taufkirchen',
+        country: 'Deutschland',
+        phone: 'Telefon: +49 176 7049 6449',
+        email: 'E-Mail: amitabh@cosmiqconsulting.com',
+        note: 'Der Verantwortliche ist die natürliche oder juristische Person, die die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten bestimmt.'
+      },
+      hosting: {
+        title: '2. Hosting',
+        provider: 'Diese Website wird gehostet von:',
+        company: 'Hostinger International Ltd.',
+        address: '61 Lordou Vironos Street',
+        city: '6023 Larnaca',
+        country: 'Zypern',
+        data: 'Wenn Sie unsere Website besuchen, kann der Hosting-Provider Protokolldateien sammeln, einschließlich:',
+        items: [
+          'IP-Adresse',
+          'Browsertyp und -version',
+          'Verwendetes Betriebssystem',
+          'Referrer-URL',
+          'Zeit der Serveranfrage'
+        ],
+        purpose: 'Diese Daten werden gesammelt, um den stabilen und sicheren Betrieb der Website zu gewährleisten.',
+        legal: 'Die Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Website-Betrieb).'
+      },
+      serverLogs: {
+        title: '3. Datenerfassung auf unserer Website',
+        subtitle: 'Server-Protokolldateien',
+        text: 'Der Hosting-Provider sammelt und speichert automatisch Informationen in Server-Protokolldateien, die Ihr Browser automatisch übermittelt.',
+        items: [
+          'Browsertyp und -version',
+          'Betriebssystem',
+          'Referrer-URL',
+          'Hostname des zugreifenden Computers',
+          'Zeit der Serveranfrage',
+          'IP-Adresse'
+        ],
+        note: 'Diese Daten werden nicht mit anderen Datenquellen zusammengeführt.'
+      },
+      contact: {
+        title: '4. Kontakt per E-Mail oder Telefon',
+        text: 'Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage einschließlich aller daraus resultierenden persönlichen Daten gespeichert und verarbeitet, um Ihre Anfrage zu bearbeiten.',
+        data: 'Dies umfasst:',
+        items: [
+          'Name',
+          'E-Mail-Adresse',
+          'Telefonnummer',
+          'Anfragedetails'
+        ],
+        legal: 'Die Rechtsgrundlage für die Verarbeitung ist:',
+        legalItems: [
+          'Art. 6 Abs. 1 lit. b DSGVO – Verarbeitung für vertragliche Kommunikation erforderlich',
+          'Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse an der Beantwortung von Anfragen'
+        ],
+        retention: 'Ihre Daten bleiben bei uns, bis der Zweck der Datenspeicherung nicht mehr zutrifft oder Sie die Löschung beantragen.'
+      },
+      calendly: {
+        title: '5. Terminbuchung',
+        provider: 'Für die Buchung von Beratungen über unsere Website verwenden wir:',
+        company: 'Calendly LLC, Atlanta, USA',
+        data: 'Wenn Sie einen Termin buchen, können folgende Daten verarbeitet werden:',
+        items: [
+          'Name',
+          'E-Mail-Adresse',
+          'Terminzeit',
+          'Zusätzliche Informationen, die Sie bereitstellen'
+        ],
+        purpose: 'Diese Informationen sind erforderlich, um die Beratung zu organisieren und durchzuführen.',
+        legal: 'Die Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (vertragliche Dienstleistungen).',
+        link: 'Weitere Informationen finden Sie in der Datenschutzerklärung von Calendly.'
+      },
+      cookies: {
+        title: '6. Cookies',
+        text: 'Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden und die Benutzererfahrung verbessern.',
+        types: 'Cookies können sein:',
+        typeItems: [
+          'Sitzungs-Cookies (nach dem Besuch gelöscht)',
+          'Permanente Cookies (bleiben gespeichert, bis sie gelöscht werden)'
+        ],
+        purposes: 'Cookies können verwendet werden für:',
+        purposeItems: [
+          'Website-Funktionalität',
+          'Analyse',
+          'Marketing'
+        ],
+        legal: 'Die Rechtsgrundlage für die Speicherung von Cookies ist:',
+        legalItems: [
+          'Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)',
+          'Art. 6 Abs. 1 lit. a DSGVO, wenn Einwilligung erforderlich ist'
+        ],
+        browser: 'Sie können Ihren Browser so konfigurieren, dass Sie über die Verwendung von Cookies informiert werden oder diese vollständig deaktivieren.'
+      },
+      analytics: {
+        title: '7. Analyse und Werbung',
+        googleAnalytics: {
+          title: 'Google Analytics',
+          text: 'Diese Website verwendet Google Analytics. Anbieter: Google.',
+          data: 'Google Analytics verwendet Cookies, die eine Analyse Ihrer Website-Nutzung ermöglichen.',
+          items: [
+            'IP-Adresse',
+            'Geräteinformationen',
+            'Besuchte Seiten',
+            'Auf der Website verbrachte Zeit',
+            'Benutzerinteraktionen'
+          ],
+          transfer: 'Google kann diese Informationen an Server in den Vereinigten Staaten übertragen.',
+          legal: 'Die Verarbeitung erfolgt nur mit Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.',
+          withdraw: 'Sie können Ihre Einwilligung jederzeit widerrufen.'
+        },
+        googleAds: {
+          title: 'Google Ads',
+          text: 'Diese Website verwendet Google Ads. Google Ads ermöglicht es uns, Werbung in den Google-Suchergebnissen und im Google-Werbenetzwerk anzuzeigen.',
+          data: 'Google Ads kann Cookies und Tracking-Technologien verwenden, um die Werbeleistung zu messen.',
+          legal: 'Die Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Benutzereinwilligung).'
+        }
+      },
+      socialMedia: {
+        title: '8. Soziale Medien',
+        text: 'Unsere Website kann Links zu Social-Media-Plattformen enthalten wie:',
+        platforms: [
+          'LinkedIn'
+        ],
+        note: 'Wenn Sie diese Plattformen besuchen, erfolgt die Datenverarbeitung durch den jeweiligen Anbieter gemäß deren Datenschutzerklärungen.',
+        disclaimer: 'Wir haben keinen Einfluss darauf, wie diese Plattformen persönliche Daten verarbeiten.'
+      },
+      rights: {
+        title: '9. Ihre Rechte nach DSGVO',
+        text: 'Sie haben folgende Rechte bezüglich Ihrer persönlichen Daten:',
+        items: [
+          'Recht auf Auskunft über Ihre gespeicherten Daten',
+          'Recht auf Berichtigung falscher Daten',
+          'Recht auf Löschung von Daten',
+          'Recht auf Einschränkung der Verarbeitung',
+          'Recht auf Datenübertragbarkeit',
+          'Recht auf Widerspruch gegen die Verarbeitung',
+          'Recht auf Beschwerde bei einer Aufsichtsbehörde'
+        ],
+        contact: 'Um diese Rechte auszuüben, kontaktieren Sie uns bitte unter:',
+        email: 'amitabh@cosmiqconsulting.com'
+      },
+      ssl: {
+        title: '10. SSL-Verschlüsselung',
+        text: 'Aus Sicherheitsgründen und zum Schutz vertraulicher Inhalte verwendet diese Website SSL-Verschlüsselung.',
+        recognition: 'Sie erkennen eine verschlüsselte Verbindung am https://-Präfix und dem Schlosssymbol in der Adressleiste Ihres Browsers.'
+      }
+    },
+    impressum: {
+      title: 'Impressum',
+      section1: {
+        title: 'Angaben gemäß §5 TMG',
+        company: 'CosmiQ Consulting',
+        address: 'Köglweg 15',
+        city: '82024 Taufkirchen',
+        country: 'Deutschland'
+      },
+      representative: {
+        title: 'Vertreten durch:',
+        name: 'Amitabh Shekhar'
+      },
+      contact: {
+        title: 'Kontakt:',
+        phone: 'Telefon: +49 176 7049 6449',
+        email: 'E-Mail: amitabh@cosmiqconsulting.com'
+      },
+      responsible: {
+        title: 'Verantwortlich für den Inhalt nach §55 Abs. 2 RStV:',
+        name: 'Amitabh Shekhar',
+        company: 'CosmiQ Consulting',
+        address: 'Köglweg 15',
+        city: '82024 Taufkirchen',
+        country: 'Deutschland'
+      },
+      dispute: {
+        title: 'EU-Streitschlichtung',
+        text1: 'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:',
+        link: 'https://ec.europa.eu/consumers/odr/',
+        text2: 'Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.'
+      },
+      liability: {
+        title: 'Haftung für Inhalte',
+        text: 'Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.'
+      },
+      links: {
+        title: 'Haftung für Links',
+        text: 'Unsere Website kann Links zu externen Websites Dritter enthalten. Auf deren Inhalte haben wir keinen Einfluss, daher können wir für diese fremden Inhalte auch keine Gewähr übernehmen.'
+      },
+      copyright: {
+        title: 'Urheberrecht',
+        text: 'Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der vorherigen schriftlichen Zustimmung des jeweiligen Autors.'
+      }
+    },
+    terms: {
+      title: 'Allgemeine Geschäftsbedingungen (AGB)',
+      intro: 'AGB – Allgemeine Geschäftsbedingungen\nCosmiQ Consulting',
+      scope: {
+        title: '1. Geltungsbereich',
+        text: 'Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Beratungsdienstleistungen, die von CosmiQ Consulting, Köglweg 15, 82024 Taufkirchen, Deutschland, erbracht werden. Durch die Buchung einer Beratung oder Dienstleistung über unsere Website oder Buchungssystem stimmt der Kunde diesen Geschäftsbedingungen zu.'
+      },
+      services: {
+        title: '2. Dienstleistungen',
+        text: 'CosmiQ Consulting erbringt Beratungsdienstleistungen in den Bereichen Unternehmensberatung, Coaching und Beratungsdienstleistungen. Der Umfang der Dienstleistung wird individuell zwischen CosmiQ Consulting und dem Kunden festgelegt, entweder durch direkte Kommunikation oder über die Buchungsplattform.'
+      },
+      booking: {
+        title: '3. Terminbuchung',
+        text: 'Termine können online über unser Buchungssystem oder durch direkten Kontakt gebucht werden. Sobald ein Termin bestätigt ist, wird die Buchung verbindlich.'
+      },
+      payment: {
+        title: '4. Zahlung',
+        text: 'Zahlungen für Beratungsdienstleistungen müssen im Voraus geleistet werden, sofern nichts anderes vereinbart ist. Zahlungen können über Zahlungsdienstleister wie PayPal oder Banküberweisung verarbeitet werden.'
+      },
+      cancellation: {
+        title: '5. Stornierungsrichtlinie',
+        text: 'Termine können bis zu 24 Stunden vor dem vereinbarten Termin kostenlos storniert oder verschoben werden. Wenn eine Stornierung weniger als 24 Stunden vor dem Termin erfolgt oder der Client nicht zum Termin erscheint, behält sich CosmiQ Consulting das Recht vor, die volle Beratungsgebühr zu berechnen.'
+      },
+      liability: {
+        title: '6. Haftung',
+        text: 'CosmiQ Consulting erbringt Beratungsdienstleistungen auf Basis von Erfahrung und Fachwissen. Es wird jedoch keine Garantie für bestimmte Ergebnisse oder Erfolge gegeben. Die Haftung für Schäden ist auf Fälle vorsätzlichen Fehlverhaltens oder grober Fahrlässigkeit beschränkt.'
+      },
+      confidentiality: {
+        title: '7. Vertraulichkeit',
+        text: 'Alle Informationen, die der Client während der Beratungen weitergibt, werden streng vertraulich behandelt und ohne Zustimmung nicht an Dritte weitergegeben, sofern nicht gesetzlich vorgeschrieben.'
+      },
+      dataProtection: {
+        title: '8. Datenschutz',
+        text: 'Personenbezogene Daten, die im Zusammenhang mit Buchungen oder Beratungen erhoben werden, werden in Übereinstimmung mit unserer Datenschutzerklärung (Datenschutzerklärung) verarbeitet.'
+      },
+      applicableLaw: {
+        title: '9. Anwendbares Recht',
+        text: 'Es gelten die Gesetze der Bundesrepublik Deutschland.'
+      },
+      jurisdiction: {
+        title: '10. Gerichtsstand',
+        text: 'Der Gerichtsstand für alle Streitigkeiten aus dieser Geschäftsbeziehung ist München, Deutschland.'
+      },
+      companyInfo: {
+        title: 'CosmiQ Consulting',
+        address: 'Köglweg 15',
+        city: '82024 Taufkirchen',
+        country: 'Deutschland'
+      }
     }
   }
 };

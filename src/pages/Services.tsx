@@ -31,13 +31,14 @@ export const Services: React.FC = () => {
     {
       ...t.services.s2,
       icon: <Briefcase className="w-8 h-8" />,
-      image: "/assets/13.jpeg",
+      image: "/assets/20.jpeg",
+      additionalImage: "/assets/21.jpeg",
       color: "bg-bronze/5"
     },
     {
       ...t.services.s3,
       icon: <Settings className="w-8 h-8" />,
-      image: "/assets/15.jpeg",
+      image: "/assets/19.jpeg",
       color: "bg-stone/10"
     }
   ];
@@ -128,11 +129,11 @@ export const Services: React.FC = () => {
                             </Link>
                           )}
                         </div>
-                        {i === 0 ? (
+                        {i === 0 || i === 1 ? (
                           <div className="space-y-4">
                             <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
                               <img 
-                                src="/assets/home.png" 
+                                src={service.image} 
                                 alt={service.title} 
                                 className="w-full h-full object-cover"
                                 referrerPolicy="no-referrer"
@@ -140,7 +141,7 @@ export const Services: React.FC = () => {
                             </div>
                             <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
                               <img 
-                                src="/assets/home1.png" 
+                                src={i === 0 ? "/assets/home1.png" : service.additionalImage} 
                                 alt={`${service.title} - Additional`}
                                 className="w-full h-full object-cover"
                                 referrerPolicy="no-referrer"

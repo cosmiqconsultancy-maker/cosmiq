@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Instagram, Phone } from 'lucide-react';
+import { resetCookieConsent } from './CookieConsentPopup';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -16,7 +17,7 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 mb-24">
           {/* Brand */}
           <div className="space-y-8">
             <img 
@@ -30,16 +31,37 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Links */}
-          <div className="grid grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <h4 className="text-xs font-bold tracking-widest uppercase text-bronze">{t.nav.home}</h4>
-              <ul className="space-y-2 text-sm text-softwhite/60">
-                <li><Link to="/" className="hover:text-softwhite transition-colors">{t.nav.home}</Link></li>
-                <li><Link to="/services" className="hover:text-softwhite transition-colors">{t.nav.services}</Link></li>
-                <li><Link to="/booking" className="hover:text-softwhite transition-colors">{t.nav.booking}</Link></li>
-              </ul>
-            </div>
+          {/* Navigation Links */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-bold tracking-widest uppercase text-bronze">{t.nav.home}</h4>
+            <ul className="space-y-2 text-sm text-softwhite/60">
+              <li><Link to="/" className="hover:text-softwhite transition-colors">{t.nav.home}</Link></li>
+              <li><Link to="/services" className="hover:text-softwhite transition-colors">{t.nav.services}</Link></li>
+              <li><Link to="/booking" className="hover:text-softwhite transition-colors">{t.nav.booking}</Link></li>
+            </ul>
+            
+            {/* Legal Links - Under Home block */}
+            <h4 className="text-xs font-bold tracking-widest uppercase text-bronze mt-6">Legal</h4>
+            <ul className="space-y-2 text-sm text-softwhite/60">
+              <li><Link to="/impressum" className="hover:text-softwhite transition-colors">{t.footer.impressum}</Link></li>
+              <li><Link to="/privacy" className="hover:text-softwhite transition-colors">{t.footer.privacy}</Link></li>
+              <li><Link to="/terms" className="hover:text-softwhite transition-colors">{t.footer.terms}</Link></li>
+              <li>
+                <button 
+                  onClick={() => {
+                    resetCookieConsent();
+                    window.location.reload(); // Reload to show popup again
+                  }}
+                  className="hover:text-softwhite transition-colors text-left"
+                >
+                  {t.footer.cookies}
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact & CTA */}
+          <div className="space-y-6">
             <div className="space-y-4">
               <h4 className="text-xs font-bold tracking-widest uppercase text-bronze">{t.footer.contact}</h4>
               <ul className="space-y-2 text-sm text-softwhite/60">
@@ -62,13 +84,10 @@ export const Footer: React.FC = () => {
                 </li>
               </ul>
             </div>
-          </div>
-
-          {/* CTA */}
-          <div className="flex flex-col items-start md:items-end space-y-6">
+            
             <Link
               to="/booking"
-              className="bg-bronze text-softwhite px-8 py-4 text-xs font-bold tracking-widest uppercase hover:bg-softwhite hover:text-charcoal transition-all rounded-sm"
+              className="inline-block bg-bronze text-softwhite px-8 py-4 text-xs font-bold tracking-widest uppercase hover:bg-softwhite hover:text-charcoal transition-all rounded-sm"
             >
               {t.nav.bookNow}
             </Link>
@@ -76,11 +95,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="pt-12 border-t border-softwhite/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] text-softwhite/40">
-          <p>© {new Date().getFullYear()} Cosmiq Consulting. All rights reserved.</p>
-          <div className="flex space-x-8">
-            <a href="#" className="hover:text-softwhite transition-colors">Impressum</a>
-            <a href="#" className="hover:text-softwhite transition-colors">Datenschutz</a>
-          </div>
+          <p> {new Date().getFullYear()} Cosmiq Consulting. All rights reserved.</p>
         </div>
       </div>
     </footer>
