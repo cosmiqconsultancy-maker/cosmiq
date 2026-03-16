@@ -2,11 +2,13 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Home as HomeIcon, Briefcase, Settings, ArrowRight, Check, ChevronDown } from 'lucide-react';
+import { Home as HomeIcon, Briefcase, Settings, ArrowRight, Check, ChevronDown, Play } from 'lucide-react';
+import { VideoPopup } from '../components/VideoPopup';
 
 export const Services: React.FC = () => {
   const { t } = useLanguage();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const [videoPopupOpen, setVideoPopupOpen] = useState(false);
   const serviceRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleExpand = (i: number) => {
@@ -156,6 +158,20 @@ export const Services: React.FC = () => {
                               className="w-full h-full object-cover"
                               referrerPolicy="no-referrer"
                             />
+                            
+                            {/* YouTube Preview Button for Personal Report */}
+                            {i === 2 && (
+                              <button
+                                onClick={() => setVideoPopupOpen(true)}
+                                className="absolute top-4 right-4 z-10 bg-red-600 hover:bg-red-700 text-white rounded-full p-3 shadow-lg transition-all hover:scale-110 group"
+                                aria-label="Watch video overview"
+                              >
+                                <div className="flex items-center gap-2">
+                                  <Play className="w-5 h-5 fill-white" />
+                                  <span className="text-xs font-medium pr-1">View Overview</span>
+                                </div>
+                              </button>
+                            )}
                           </div>
                         )}
                       </div>
@@ -312,5 +328,13 @@ export const Services: React.FC = () => {
         </div>
       </div>
     </div>
+
+    {/* YouTube Video Popup for Personal Report */}
+    <VideoPopup 
+      videoId="gcbDHGlBWOs" 
+      trigger="external"
+      isOpen={videoPopupOpen}
+      onClose={() => setVideoPopupOpen(false)}
+    />
   );
 };

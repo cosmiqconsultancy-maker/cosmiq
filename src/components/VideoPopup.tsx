@@ -3,17 +3,29 @@ import { X, Play } from 'lucide-react';
 
 interface VideoPopupProps {
   videoId: string;
-  trigger?: 'auto' | 'button';
+  trigger?: 'auto' | 'button' | 'external';
   delay?: number; // seconds for auto trigger
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
 export const VideoPopup: React.FC<VideoPopupProps> = ({ 
   videoId, 
   trigger = 'button',
-  delay = 3
+  delay = 3,
+  isOpen: externalIsOpen,
+  onClose
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [internalIsOpen, setInternalIsOpen] = useState(false);
   const [hasAutoOpened, setHasAutoOpened] = useState(false);
+  
+  // Use external state if provided, otherwise use internal state
+  const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen;
+  const setIsOpen = externalIsOpen !== undefined 
+    ? (value: boolean) => {
+        if (!value && onClose) onClose();
+      }
+    : setInternalIsOpen;
 
   useEffect(() => {
     if (trigger === 'auto' && !hasAutoOpened) {
