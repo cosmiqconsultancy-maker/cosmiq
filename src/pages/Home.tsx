@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 import { Play } from 'lucide-react';
 import { VideoPopup } from '../components/VideoPopup';
 import { CookieConsentPopup } from '../components/CookieConsentPopup';
+import { AnalyticsDebug } from '../components/AnalyticsDebug';
 
 export const Home: React.FC = () => {
   const { t } = useLanguage();
@@ -59,7 +60,7 @@ export const Home: React.FC = () => {
         <img 
           src="/assets/13.jpeg" 
           alt="" 
-          className="absolute inset-0 w-full h-full object-cover opacity-10"
+          className="absolute inset-0 w-full h-full object-cover opacity-5"
           referrerPolicy="no-referrer"
         />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -193,8 +194,8 @@ export const Home: React.FC = () => {
       {/* Testimonials Section */}
       <section className="py-24 bg-softwhite overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-12">
-          <h2 className="text-4xl md:text-5xl font-display font-medium text-center mb-4">What Our Clients Say</h2>
-          <p className="text-charcoal/60 text-center max-w-2xl mx-auto">Real experiences from people who transformed their spaces and lives</p>
+          <h2 className="text-4xl md:text-5xl font-display font-medium text-center mb-4">{t.testimonials.title}</h2>
+          <p className="text-charcoal/60 text-center max-w-2xl mx-auto">{t.testimonials.subtitle}</p>
         </div>
         
         <div className="relative">
@@ -205,86 +206,28 @@ export const Home: React.FC = () => {
           >
             {[...Array(2)].map((_, setIndex) => (
               <React.Fragment key={setIndex}>
-                {/* German Client 1 - Munich */}
-                <div className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
-                      <span className="text-bronze font-bold">SK</span>
+                {t.testimonials.clients.map((client, idx) => (
+                  <div key={idx} className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
+                        <span className="text-bronze font-bold">{client.initials}</span>
+                      </div>
+                      <div>
+                        <h4 className="font-display font-medium">{client.name}</h4>
+                        <p className="text-xs text-charcoal/60">{client.location}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-display font-medium">Sarah Klein</h4>
-                      <p className="text-xs text-charcoal/60">Munich, Germany</p>
-                    </div>
+                    <p className="text-sm text-charcoal/70 leading-relaxed">"{client.content}"</p>
+                    <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
                   </div>
-                  <p className="text-sm text-charcoal/70 leading-relaxed">"Amitabh's consultation completely changed our home office setup. My productivity has increased significantly, and I feel more focused throughout the day. The Vastu adjustments were simple but incredibly effective."</p>
-                  <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
-                </div>
-
-                {/* German Client 2 - Munich */}
-                <div className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
-                      <span className="text-bronze font-bold">MW</span>
-                    </div>
-                    <div>
-                      <h4 className="font-display font-medium">Markus Weber</h4>
-                      <p className="text-xs text-charcoal/60">Munich, Germany</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-charcoal/70 leading-relaxed">"After implementing Amitabh's recommendations, my sleep quality improved dramatically. I was skeptical at first, but the bedroom repositioning made a real difference. Highly recommended for anyone struggling with restlessness."</p>
-                  <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
-                </div>
-
-                {/* German Client 3 - Munich */}
-                <div className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
-                      <span className="text-bronze font-bold">LF</span>
-                    </div>
-                    <div>
-                      <h4 className="font-display font-medium">Laura Fischer</h4>
-                      <p className="text-xs text-charcoal/60">Munich, Germany</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-charcoal/70 leading-relaxed">"Our family relationships have become much more harmonious since the consultation. The living room adjustments created a more peaceful atmosphere. Amitabh understood our needs perfectly and provided practical solutions."</p>
-                  <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
-                </div>
-
-                {/* Indian Client 1 */}
-                <div className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
-                      <span className="text-bronze font-bold">RP</span>
-                    </div>
-                    <div>
-                      <h4 className="font-display font-medium">Raj Patel</h4>
-                      <p className="text-xs text-charcoal/60">Bangalore, India</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-charcoal/70 leading-relaxed">"As someone familiar with Vastu, I was impressed by Amitabh's modern approach. He blended traditional wisdom with contemporary living seamlessly. My business has seen noticeable growth since the office consultation."</p>
-                  <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
-                </div>
-
-                {/* Indian Client 2 */}
-                <div className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
-                      <span className="text-bronze font-bold">AS</span>
-                    </div>
-                    <div>
-                      <h4 className="font-display font-medium">Anita Sharma</h4>
-                      <p className="text-xs text-charcoal/60">Delhi, India</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-charcoal/70 leading-relaxed">"Amitabh's Cosmiq Report was incredibly detailed and accurate. The personalized blueprint helped me understand my strengths and challenges. His guidance on spatial alignment has brought clarity and balance to my life."</p>
-                  <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
-                </div>
+                ))}
               </React.Fragment>
             ))}
           </motion.div>
         </div>
       </section>
 
+      <AnalyticsDebug />
       <CookieConsentPopup />
 
       </div>

@@ -38,7 +38,7 @@ export const Services: React.FC = () => {
     {
       ...t.services.s3,
       icon: <Settings className="w-8 h-8" />,
-      image: "/assets/19.jpeg",
+      image: "/assets/23.jpeg",
       color: "bg-stone/10"
     }
   ];
@@ -149,7 +149,7 @@ export const Services: React.FC = () => {
                             </div>
                           </div>
                         ) : (
-                          <div className={`relative rounded-xl overflow-hidden shadow-lg ${i === 1 ? 'aspect-[4/3]' : 'aspect-video'}`}>
+                          <div className={`relative rounded-xl overflow-hidden shadow-lg ${i === 1 ? 'aspect-[3/4]' : 'aspect-[4/3]'}`}>
                             <img 
                               src={service.image} 
                               alt={service.title} 

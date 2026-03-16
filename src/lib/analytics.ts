@@ -30,7 +30,7 @@ export const loadGoogleAnalytics = (trackingId?: string) => {
   }
 
   // Use provided ID or fall back to client config
-  const actualTrackingId = trackingId || 'G-XXXXXXXXXX'; // TODO: Replace with client's actual ID
+  const actualTrackingId = trackingId || 'G-4SM1EJL413'; // Client's real GA ID
   
   // Load Google Analytics script
   const script = document.createElement('script');
@@ -112,7 +112,7 @@ export const initializeTracking = (customPreferences?: CookieSettings) => {
   if (settings.analytics) {
     // Initialize analytics tools
     // Add your Google Analytics ID here
-    loadGoogleAnalytics('G-XXXXXXXXXX'); // TODO: Replace with real ID
+    loadGoogleAnalytics('G-4SM1EJL413'); // Client's real GA ID
     
     // Add your Hotjar Site ID here
     loadHotjar(1234567);
@@ -136,7 +136,7 @@ export const trackPageView = (path: string) => {
   const settings = getCookieSettings();
   
   if (settings.analytics && window.gtag) {
-    window.gtag('config', 'G-XXXXXXXXXX', {
+    window.gtag('config', 'G-4SM1EJL413', {
       page_path: path
     });
   }

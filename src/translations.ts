@@ -15,6 +15,42 @@ export const translations = {
       cta: 'Book Your Free 20-Minute Assessment',
       tagline: 'Where Energy Meets Architecture',
     },
+    testimonials: {
+      title: 'What Our Clients Say',
+      subtitle: 'Real experiences from people who transformed their spaces and lives',
+      clients: [
+        {
+          initials: 'SK',
+          name: 'Sarah Klein',
+          location: 'Munich, Germany',
+          content: "Amitabh's consultation completely changed our home office setup. My productivity has increased significantly, and I feel more focused throughout the day. The Vastu adjustments were simple but incredibly effective."
+        },
+        {
+          initials: 'MW',
+          name: 'Markus Weber',
+          location: 'Munich, Germany',
+          content: "After implementing Amitabh's recommendations, my sleep quality improved dramatically. I was skeptical at first, but the bedroom repositioning made a real difference. Highly recommended for anyone struggling with restlessness."
+        },
+        {
+          initials: 'LF',
+          name: 'Laura Fischer',
+          location: 'Munich, Germany',
+          content: "Our family relationships have become much more harmonious since the consultation. The living room adjustments created a more peaceful atmosphere. Amitabh understood our needs perfectly and provided practical solutions."
+        },
+        {
+          initials: 'RP',
+          name: 'Raj Patel',
+          location: 'Bangalore, India',
+          content: "As someone familiar with Vastu, I was impressed by Amitabh's modern approach. He blended traditional wisdom with contemporary living seamlessly. My business has seen noticeable growth since the office consultation."
+        },
+        {
+          initials: 'AS',
+          name: 'Anita Sharma',
+          location: 'Delhi, India',
+          content: "Amitabh's Cosmiq Report was incredibly detailed and accurate. The personalized blueprint helped me understand my strengths and challenges. His guidance on spatial alignment has brought clarity and balance to my life."
+        }
+      ]
+    },
     vastu: {
       title: 'What is Vastu Shastra?',
       text1: 'Vastu Shastra is an ancient architectural science that studies the relationship between space, direction, light and human wellbeing.',
@@ -157,7 +193,7 @@ export const translations = {
         title: 'Personalised Cosmiq Report',
         tagline: 'Your CosmiQ Blueprint',
         quote: 'Discover the hidden map of your life, written in the stars, numbers and directions.',
-        description: 'A comprehensive 130-140 page personalized guide combining Astrology, Numerology, and Vastu wisdom tailored specifically for you. This unique blueprint reveals your life path, career potential, relationship patterns, and spatial alignment recommendations.',
+        description: 'A comprehensive 130-140 page personalized guide combining Astrology, Numerology, and Vastu wisdom tailored specifically for you. This unique blueprint reveals your life path, career potential, relationship patterns, and spatial alignment recommendations.\n\nComplete Life Blueprint\nDetailed analysis of your birth chart revealing career paths, relationship dynamics, health patterns, wealth potential, and personal growth opportunities based on planetary positions at your birth.',
         features: [
           { title: 'Complete Life Blueprint', desc: 'Detailed analysis of your birth chart revealing career paths, relationship dynamics, health patterns, wealth potential, and personal growth opportunities based on planetary positions at your birth.' }
         ],
@@ -510,6 +546,42 @@ export const translations = {
       cta: 'Buchen Sie Ihre kostenlose 20-minütige Analyse',
       tagline: 'Wo Energie auf Architektur trifft',
     },
+    testimonials: {
+      title: 'Was Unsere Kunden Sagen',
+      subtitle: 'Echte Erfahrungen von Menschen, die ihre Räume und Leben verändert haben',
+      clients: [
+        {
+          initials: 'SK',
+          name: 'Sarah Klein',
+          location: 'München, Deutschland',
+          content: "Amitabhs Beratung hat unser Home-Office-Setup völlig verändert. Meine Produktivität hat deutlich zugenommen und ich fühle mich den ganzen Tag über fokussierter. Die Vastu-Anpassungen waren einfach, aber unglaublich effektiv."
+        },
+        {
+          initials: 'MW',
+          name: 'Markus Weber',
+          location: 'München, Deutschland',
+          content: "Nach der Umsetzung von Amitabhs Empfehlungen hat sich meine Schlafqualität dramatisch verbessert. Ich war anfangs skeptisch, aber die Neupositionierung des Schlafzimmers hat einen echten Unterschied gemacht. Sehr zu empfehlen für jeden, der mit Unruhe kämpft."
+        },
+        {
+          initials: 'LF',
+          name: 'Laura Fischer',
+          location: 'München, Deutschland',
+          content: "Unsere Familienbeziehungen sind seit der Beratung viel harmonischer geworden. Die Anpassungen im Wohnzimmer haben eine friedlichere Atmosphäre geschaffen. Amitabh hat unsere Bedürfnisse perfekt verstanden und praktische Lösungen geboten."
+        },
+        {
+          initials: 'RP',
+          name: 'Raj Patel',
+          location: 'Bangalore, Indien',
+          content: "Als jemand, der mit Vastu vertraut ist, war ich von Amitabhs modernem Ansatz beeindruckt. Er hat traditionelle Weisheit nahtlos mit zeitgemäßem Wohnen verbunden. Mein Geschäft hat seit der Beratung ein spürbares Wachstum erlebt."
+        },
+        {
+          initials: 'AS',
+          name: 'Anita Sharma',
+          location: 'Delhi, Indien',
+          content: "Amitabhs Cosmiq-Bericht war unglaublich detailliert und genau. Der personalisierte Blueprint half mir, meine Stärken und Herausforderungen zu verstehen. Seine Anleitung zur räumlichen Ausrichtung hat Klarheit und Balance in mein Leben gebracht."
+        }
+      ]
+    },
     vastu: {
       title: 'Was ist Vastu Shastra?',
       text1: 'Vastu Shastra ist eine alte Architekturwissenschaft, die die Beziehung zwischen Raum, Richtung, Licht und menschlichem Wohlbefinden untersucht.',
@@ -645,7 +717,7 @@ export const translations = {
         title: 'Personalisierter Cosmiq-Bericht',
         tagline: 'Ihr CosmiQ Blueprint',
         quote: 'Entdecken Sie die verborgene Karte Ihres Lebens, geschrieben in den Sternen, Zahlen und Richtungen.',
-        description: 'Ein umfassender 130-140 seitiger personalisierter Leitfaden, der Astrologie, Numerologie und Vastu-Weisheit speziell für Sie kombiniert. Dieser einzigartige Blueprint enthüllt Ihren Lebensweg, Karrierepotenzial, Beziehungsmuster und räumliche Ausrichtungsempfehlungen.',
+        description: 'Ein umfassender 130-140 seitiger personalisierter Leitfaden, der Astrologie, Numerologie und Vastu-Weisheit speziell für Sie kombiniert. Dieser einzigartige Blueprint enthüllt Ihren Lebensweg, Karrierepotenzial, Beziehungsmuster und räumliche Ausrichtungsempfehlungen.\n\nVollständiger Lebens-Blueprint\nDetaillierte Analyse Ihrer Geburtskarte, die Karrierewege, Beziehungsdynamiken, Gesundheitsmuster, Wohlstandspotenzial und persönliche Wachstumschancen auf der Grundlage der Planetenpositionen bei Ihrer Geburt offenbart.',
         features: [
           { title: 'Kompletter Lebens-Blueprint', desc: 'Detaillierte Analyse Ihres Geburtshoroskops, die Karrierewege, Beziehungsdynamiken, Gesundheitsmuster, Vermögenspotenzial und persönliche Wachstumschancen basierend auf den Planetenpositionen bei Ihrer Geburt enthüllt.' }
         ],

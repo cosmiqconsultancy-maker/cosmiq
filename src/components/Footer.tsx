@@ -46,17 +46,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/impressum" className="hover:text-softwhite transition-colors">{t.footer.impressum}</Link></li>
               <li><Link to="/privacy" className="hover:text-softwhite transition-colors">{t.footer.privacy}</Link></li>
               <li><Link to="/terms" className="hover:text-softwhite transition-colors">{t.footer.terms}</Link></li>
-              <li>
-                <button 
-                  onClick={() => {
-                    resetCookieConsent();
-                    window.location.reload(); // Reload to show popup again
-                  }}
-                  className="hover:text-softwhite transition-colors text-left"
-                >
-                  {t.footer.cookies}
-                </button>
-              </li>
+              <li><Link to="/cookies" className="hover:text-softwhite transition-colors">{t.footer.cookies}</Link></li>
             </ul>
           </div>
 
