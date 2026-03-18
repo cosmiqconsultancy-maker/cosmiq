@@ -101,6 +101,50 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
   }
 
+  if (req.method === 'PUT') {
+    try {
+      // Check authorization
+      const authHeader = req.headers.authorization;
+      if (authHeader !== `Bearer ${ADMIN_PASSWORD}`) {
+        return res.status(403).json({ error: 'Unauthorized' });
+      }
+
+      const { id } = req.query;
+      if (!id || typeof id !== 'string') {
+        return res.status(400).json({ error: 'Blog ID required' });
+      }
+
+      const { title, subtitle, content, imageUrl } = req.body;
+      
+      if (!title || !content) {
+        return res.status(400).json({ error: 'Title and content are required' });
+      }
+
+      const existingBlogs = await kv.get<Blog[]>(BLOGS_KEY) || [];
+      const blogIndex = existingBlogs.findIndex(blog => blog.id === id);
+      
+      if (blogIndex === -1) {
+        return res.status(404).json({ error: 'Blog not found' });
+      }
+
+      // Update the blog
+      existingBlogs[blogIndex] = {
+        ...existingBlogs[blogIndex],
+        title,
+        subtitle: subtitle || '',
+        content,
+        imageUrl: imageUrl || '',
+        updated_at: new Date().toISOString()
+      };
+      
+      await kv.set(BLOGS_KEY, existingBlogs);
+      return res.status(200).json({ success: true, blog: existingBlogs[blogIndex] });
+    } catch (error) {
+      console.error('KV update error:', error);
+      return res.status(500).json({ error: 'Failed to update blog' });
+    }
+  }
+
   if (req.method === 'DELETE') {
     try {
       // Check authorization

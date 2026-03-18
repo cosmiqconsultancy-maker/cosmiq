@@ -65,6 +65,31 @@ export const AdminBlogs: React.FC = () => {
     }
   };
 
+  const handleUpdate = async (id: string) => {
+    try {
+      const response = await fetch(`/api/blogs/${id}`, {
+        method: 'PUT',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${password}`
+        },
+        body: JSON.stringify({
+          title: editingBlog?.title,
+          subtitle: editingBlog?.subtitle,
+          content: editingBlog?.content,
+          imageUrl: editingBlog?.imageUrl
+        })
+      });
+
+      if (response.ok) {
+        setEditingBlog(null);
+        await fetchBlogs();
+      }
+    } catch (error) {
+      console.error('Error updating blog:', error);
+    }
+  };
+
   const handleDelete = async (id: string) => {
     if (!confirm('Delete this blog?')) return;
     try {
@@ -180,7 +205,7 @@ export const AdminBlogs: React.FC = () => {
               />
               <div className="flex gap-4">
                 <button
-                  onClick={isCreating ? handleCreate : () => {}}
+                  onClick={isCreating ? handleCreate : () => editingBlog && handleUpdate(editingBlog.id)}
                   className="flex items-center gap-2 px-6 py-2 bg-bronze text-white rounded-lg hover:bg-bronze/90"
                 >
                   <Save className="w-4 h-4" />
