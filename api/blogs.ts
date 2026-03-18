@@ -89,6 +89,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (req.method === 'DELETE') {
     try {
+      // Check authorization
+      const authHeader = req.headers.authorization;
+      const ADMIN_PASSWORD = 'Cosmiq@consultancy.pass';
+      
+      if (authHeader !== `Bearer ${ADMIN_PASSWORD}`) {
+        return res.status(403).json({ error: 'Unauthorized' });
+      }
+
       const { id } = req.query;
       if (!id) {
         return res.status(400).json({ error: 'Blog ID required' });
