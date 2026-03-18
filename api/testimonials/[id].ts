@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { updateTestimonial, deleteTestimonial } from '../../src/lib/file-storage.js';
+import { testimonials, type Testimonial } from '../../src/lib/shared-storage.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -30,22 +30,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const { action } = req.body;
 
       if (action === 'approve') {
-        const testimonial = await updateTestimonial(testimonialId, { status: 'approved' });
-        if (testimonial) {
+        const testimonialIndex = testimonials.findIndex(t => t.id === testimonialId);
+        if (testimonialIndex !== -1) {
+          testimonials[testimonialIndex] = { ...testimonials[testimonialIndex], status: 'approved', updated_at: new Date().toISOString() };
           console.log(`Testimonial ${testimonialId} approved`);
-          return res.status(200).json({ success: true, testimonial });
+          return res.status(200).json({ success: true, testimonial: testimonials[testimonialIndex] });
         }
       }
 
       if (action === 'reject') {
-        const testimonial = await updateTestimonial(testimonialId, { status: 'rejected' });
-        if (testimonial) {
+        const testimonialIndex = testimonials.findIndex(t => t.id === testimonialId);
+        if (testimonialIndex !== -1) {
+          testimonials[testimonialIndex] = { ...testimonials[testimonialIndex], status: 'rejected', updated_at: new Date().toISOString() };
           console.log(`Testimonial ${testimonialId} rejected`);
-          return res.status(200).json({ success: true, testimonial });
+          return res.status(200).json({ success: true, testimonial: testimonials[testimonialIndex] });
         }
       }
 
-      return res.status(400).json({ error: 'Invalid action. Use "approve" or "reject"' });
+      return res.status(404).json({ error: 'Testimonial not found' });
     } catch (error) {
       console.error('Error updating testimonial:', error);
       return res.status(500).json({ error: 'Failed to update testimonial' });
@@ -54,8 +56,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (req.method === 'DELETE') {
     try {
-      const success = await deleteTestimonial(testimonialId);
-      if (success) {
+      const testimonialIndex = testimonials.findIndex(t => t.id === testimonialId);
+      if (testimonialIndex !== -1) {
+        testimonials.splice(testimonialIndex, 1);
         console.log(`Testimonial ${testimonialId} deleted`);
         return res.status(200).json({ success: true });
       } else {

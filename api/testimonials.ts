@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getTestimonials, addTestimonial } from '../src/lib/file-storage.js';
+import { testimonials, type Testimonial } from '../src/lib/shared-storage.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -14,8 +14,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === 'GET') {
     try {
       const { status } = req.query;
-      const testimonials = await getTestimonials(status as string);
-      return res.status(200).json({ testimonials });
+      let filteredTestimonials = testimonials;
+      
+      if (status) {
+        filteredTestimonials = testimonials.filter(t => t.status === status);
+      }
+      
+      return res.status(200).json({ testimonials: filteredTestimonials });
     } catch (error) {
       console.error('Error fetching testimonials:', error);
       return res.status(500).json({ error: 'Failed to fetch testimonials' });
@@ -30,10 +35,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(400).json({ error: 'Name, email, and message are required' });
       }
 
-      const testimonial = await addTestimonial(name, email, message);
-      console.log('New testimonial submitted:', testimonial);
+      const newTestimonial: Testimonial = {
+        id: Date.now(),
+        name,
+        email,
+        message,
+        status: 'pending',
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      };
 
-      return res.status(200).json({ success: true, testimonial });
+      testimonials.push(newTestimonial);
+      console.log('New testimonial submitted:', newTestimonial);
+
+      return res.status(200).json({ success: true, testimonial: newTestimonial });
     } catch (error) {
       console.error('Error creating testimonial:', error);
       return res.status(500).json({ error: 'Failed to submit testimonial' });
