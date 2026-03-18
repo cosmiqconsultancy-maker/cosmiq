@@ -66,8 +66,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const { action } = req.body;
       console.log(`Admin action: ${action} for testimonial ${id}`);
 
+      // Normalize action to proper status
+      const normalizedAction = action === 'approve' ? 'approved' : action === 'reject' ? 'rejected' : action;
+
       const updated = testimonials.map(t =>
-        t.id === id ? { ...t, status: action, updated_at: new Date().toISOString() } : t
+        t.id === id ? { ...t, status: normalizedAction, updated_at: new Date().toISOString() } : t
       );
 
       try {
@@ -76,7 +79,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         console.log('KV set error:', kvError);
       }
 
-      return res.status(200).json({ success: true, message: `Testimonial ${action}d` });
+      return res.status(200).json({ success: true, message: `Testimonial ${normalizedAction}` });
     }
 
     if (req.method === 'DELETE') {
