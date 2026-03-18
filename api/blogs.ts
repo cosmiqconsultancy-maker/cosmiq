@@ -76,11 +76,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         updated_at: new Date().toISOString()
       };
 
-      const existingBlogs = await kv.get<Blog[]>(BLOGS_KEY) || [];
+      // Try to get existing blogs, fallback to current fallbackBlogs if KV fails
+      let existingBlogs: Blog[] = [];
+      try {
+        const stored = await kv.get<Blog[]>(BLOGS_KEY);
+        if (stored && stored.length > 0) {
+          existingBlogs = stored;
+        } else {
+          // If no stored blogs, use fallback blogs as base
+          existingBlogs = fallbackBlogs;
+        }
+      } catch (e) {
+        // If KV fails, use fallback blogs
+        existingBlogs = fallbackBlogs;
+      }
+      
       const updatedBlogs = [newBlog, ...existingBlogs];
       
       await kv.set(BLOGS_KEY, updatedBlogs);
-      return res.status(200).json({ success: true, blog: newBlog });
+      return res.status(200).json({ success: true, blog: newBlog, blogs: updatedBlogs });
     } catch (error) {
       console.error('KV set error:', error);
       return res.status(500).json({ error: 'Failed to create blog' });
