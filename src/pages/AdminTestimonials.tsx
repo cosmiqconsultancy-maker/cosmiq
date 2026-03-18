@@ -18,7 +18,10 @@ export const AdminTestimonials: React.FC = () => {
     setLoading(true);
     try {
       const statusParam = filter !== 'all' ? `?status=${filter}` : '';
-      const response = await fetch(`/api/testimonials${statusParam}`);
+      const baseUrl = process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:3001' 
+        : '';
+      const response = await fetch(`${baseUrl}/api/testimonials${statusParam}`);
       const data = await response.json();
       setTestimonials(data.testimonials);
     } catch (error) {
@@ -30,7 +33,10 @@ export const AdminTestimonials: React.FC = () => {
 
   const handleAction = async (id: number, action: 'approve' | 'reject') => {
     try {
-      const response = await fetch(`/api/testimonials/${id}`, {
+      const baseUrl = process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:3001' 
+        : '';
+      const response = await fetch(`${baseUrl}/api/testimonials/${id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +59,10 @@ export const AdminTestimonials: React.FC = () => {
     if (!confirm('Are you sure you want to delete this testimonial?')) return;
 
     try {
-      const response = await fetch(`/api/testimonials/${id}`, {
+      const baseUrl = process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:3001' 
+        : '';
+      const response = await fetch(`${baseUrl}/api/testimonials/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${password}`

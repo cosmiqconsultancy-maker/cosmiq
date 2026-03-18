@@ -15,7 +15,11 @@ export const Home: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/testimonials?status=approved')
+    const apiUrl = process.env.NODE_ENV === 'development' 
+      ? 'http://localhost:3001/api/testimonials?status=approved'
+      : '/api/testimonials?status=approved';
+    
+    fetch(apiUrl)
       .then(res => res.json())
       .then(data => {
         setTestimonials(data.testimonials || []);
