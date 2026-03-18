@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { getStoredTestimonials, addTestimonial, updateTestimonial, deleteTestimonial } from './src/lib/storage.js';
 
 const app = express();
 const PORT = 3001;
@@ -10,55 +11,14 @@ app.use(express.json());
 
 // Testimonials API
 app.get('/api/testimonials', (req, res) => {
-  const fallbackTestimonials = [
-    {
-      id: 1,
-      name: 'Sarah Klein',
-      email: '',
-      message: "Amitabh's consultation completely changed our home office setup. My productivity has increased significantly, and I feel more focused throughout the day. The Vastu adjustments were simple but incredibly effective.",
-      status: 'approved',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString()
-    },
-    {
-      id: 2,
-      name: 'Markus Weber',
-      email: '',
-      message: "After implementing Amitabh's recommendations, my sleep quality improved dramatically. I was skeptical at first, but the bedroom repositioning made a real difference. Highly recommended for anyone struggling with restlessness.",
-      status: 'approved',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString()
-    },
-    {
-      id: 3,
-      name: 'Laura Fischer',
-      email: '',
-      message: "Our family relationships have become much more harmonious since the consultation. The living room adjustments created a more peaceful atmosphere. Amitabh understood our needs perfectly and provided practical solutions.",
-      status: 'approved',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString()
-    },
-    {
-      id: 4,
-      name: 'Raj Patel',
-      email: '',
-      message: "As someone familiar with Vastu, I was impressed by Amitabh's modern approach. He blended traditional wisdom with contemporary living seamlessly. My business has seen noticeable growth since the office consultation.",
-      status: 'approved',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString()
-    },
-    {
-      id: 5,
-      name: 'Anita Sharma',
-      email: '',
-      message: "Amitabh's Cosmiq Report was incredibly detailed and accurate. The personalized blueprint helped me understand my strengths and challenges. His guidance on spatial alignment has brought clarity and balance to my life.",
-      status: 'approved',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString()
-    }
-  ];
+  const { status } = req.query;
+  let testimonials = getStoredTestimonials();
   
-  res.json({ testimonials: fallbackTestimonials });
+  if (status) {
+    testimonials = testimonials.filter(t => t.status === status);
+  }
+  
+  res.json({ testimonials });
 });
 
 app.post('/api/testimonials', (req, res) => {
@@ -68,10 +28,10 @@ app.post('/api/testimonials', (req, res) => {
     return res.status(400).json({ error: 'Name, email, and message are required' });
   }
 
-  // Log the testimonial for testing
-  console.log('New testimonial submission:', { name, email, message });
+  const testimonial = addTestimonial({ name, email, message });
+  console.log('New testimonial submitted:', testimonial);
   
-  res.status(200).json({ success: true, message: 'Testimonial submitted successfully' });
+  res.status(200).json({ success: true, testimonial });
 });
 
 // Admin API
@@ -85,12 +45,24 @@ app.post('/api/testimonials/:id', (req, res) => {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
-  if (action === 'approve' || action === 'reject') {
-    console.log(`Testimonial ${id} ${action}ed`);
-    res.status(200).json({ 
-      success: true, 
-      message: `Testimonial ${action}d successfully` 
-    });
+  const testimonialId = parseInt(id, 10);
+  
+  if (action === 'approve') {
+    const testimonial = updateTestimonial(testimonialId, { status: 'approved' });
+    if (testimonial) {
+      console.log(`Testimonial ${testimonialId} approved`);
+      res.status(200).json({ success: true, testimonial });
+    } else {
+      res.status(404).json({ error: 'Testimonial not found' });
+    }
+  } else if (action === 'reject') {
+    const testimonial = updateTestimonial(testimonialId, { status: 'rejected' });
+    if (testimonial) {
+      console.log(`Testimonial ${testimonialId} rejected`);
+      res.status(200).json({ success: true, testimonial });
+    } else {
+      res.status(404).json({ error: 'Testimonial not found' });
+    }
   } else {
     res.status(400).json({ error: 'Invalid action' });
   }
@@ -105,8 +77,15 @@ app.delete('/api/testimonials/:id', (req, res) => {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
-  console.log(`Testimonial ${id} deleted`);
-  res.status(200).json({ success: true });
+  const testimonialId = parseInt(id, 10);
+  const success = deleteTestimonial(testimonialId);
+  
+  if (success) {
+    console.log(`Testimonial ${testimonialId} deleted`);
+    res.status(200).json({ success: true });
+  } else {
+    res.status(404).json({ error: 'Testimonial not found' });
+  }
 });
 
 app.listen(PORT, () => {
