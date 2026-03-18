@@ -42,8 +42,12 @@ export const AdminTestimonials: React.FC = () => {
       if (response.ok) {
         fetchTestimonials();
       } else {
-        const error = await response.json();
-        alert(`Failed to update testimonial: ${error.error || 'Unknown error'}`);
+        try {
+          const error = await response.json();
+          alert(`Failed to update testimonial: ${error.error || 'Unknown error'}`);
+        } catch {
+          alert('Failed to update testimonial: Server error');
+        }
       }
     } catch (error) {
       console.error('Error updating testimonial:', error);
@@ -65,8 +69,12 @@ export const AdminTestimonials: React.FC = () => {
       if (response.ok) {
         fetchTestimonials();
       } else {
-        const error = await response.json();
-        alert(`Failed to delete testimonial: ${error.error || 'Unknown error'}`);
+        try {
+          const error = await response.json();
+          alert(`Failed to delete testimonial: ${error.error || 'Unknown error'}`);
+        } catch {
+          alert('Failed to delete testimonial: Server error');
+        }
       }
     } catch (error) {
       console.error('Error deleting testimonial:', error);
