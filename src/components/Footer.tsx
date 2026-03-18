@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-8">
             <img 
-              src="https://www.cosmiqconsulting.com/user/themes/quark/images/logo/white%20logo.PNG" 
+              src="/assets/logo.png" 
               alt="Cosmiq Logo" 
               className="h-12"
               referrerPolicy="no-referrer"

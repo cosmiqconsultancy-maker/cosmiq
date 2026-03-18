@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <img 
-            src="https://www.cosmiqconsulting.com/user/themes/quark/images/logo/white%20logo.PNG" 
+            src="/assets/logo.png" 
             alt="Cosmiq Logo" 
             className="h-8"
             style={{ filter: 'brightness(0) saturate(100%) invert(53%) sepia(13%) saturate(1518%) hue-rotate(347deg) brightness(91%) contrast(88%)' }}
