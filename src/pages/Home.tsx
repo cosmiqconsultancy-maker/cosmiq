@@ -16,8 +16,16 @@ export const Home: React.FC = () => {
 
   useEffect(() => {
     fetch('/api/testimonials?status=approved')
-      .then(res => res.json())
+      .then(res => {
+        console.log('API response status:', res.status);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
       .then(data => {
+        console.log('API data received:', data);
+        console.log('Testimonials count:', data.testimonials?.length || 0);
         setTestimonials(data.testimonials || []);
         setLoading(false);
       })
