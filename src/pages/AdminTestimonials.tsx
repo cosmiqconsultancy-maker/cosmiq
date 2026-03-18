@@ -6,8 +6,20 @@ export const AdminTestimonials: React.FC = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loginError, setLoginError] = useState('');
   const [filter, setFilter] = useState<'all' | 'pending' | 'approved' | 'rejected'>('all');
   const [loading, setLoading] = useState(false);
+
+  const ADMIN_PASSWORD = 'Cosmiq@consultancy.pass';
+
+  const handleLogin = () => {
+    if (password === ADMIN_PASSWORD) {
+      setIsAuthenticated(true);
+      setLoginError('');
+    } else {
+      setLoginError('Invalid password');
+    }
+  };
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -92,11 +104,17 @@ export const AdminTestimonials: React.FC = () => {
             type="password"
             placeholder="Enter admin password"
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={e => {
+              setPassword(e.target.value);
+              setLoginError('');
+            }}
             className="w-full px-4 py-2 border border-charcoal/20 rounded-lg mb-4"
           />
+          {loginError && (
+            <p className="text-red-500 text-sm mb-4">{loginError}</p>
+          )}
           <button
-            onClick={() => setIsAuthenticated(true)}
+            onClick={handleLogin}
             className="w-full px-4 py-2 bg-bronze text-white rounded-lg hover:bg-bronze/90"
           >
             Login
