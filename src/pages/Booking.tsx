@@ -89,6 +89,14 @@ export const Booking: React.FC = () => {
               </div>
             </div>
 
+            {/* Privacy Notice */}
+            <div className="mt-12 p-6 bg-bronze/5 border border-bronze/20 rounded-2xl">
+              <h3 className="text-lg font-display font-medium text-bronze mb-3">Your Privacy Matters</h3>
+              <p className="text-charcoal/70 text-sm leading-relaxed font-medium">
+                All information shared during the consultation process is treated with strict confidentiality. Your personal details, floor plans and property information will never be shared with third parties.
+              </p>
+            </div>
+
             <div className="pt-8 border-t border-charcoal/10">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-bronze">Cosmiq Consulting Munich</p>
             </div>

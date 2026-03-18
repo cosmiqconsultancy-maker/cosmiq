@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
             <img 
               src="/assets/logo.png" 
               alt="Cosmiq Logo" 
-              className="h-12"
+              className="h-16"
               referrerPolicy="no-referrer"
             />
             <p className="text-softwhite/60 text-sm max-w-xs leading-relaxed">

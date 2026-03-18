@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
           <img 
             src="/assets/logo.png" 
             alt="Cosmiq Logo" 
-            className="h-8"
+            className="h-12"
             style={{ filter: 'brightness(0) saturate(100%) invert(53%) sepia(13%) saturate(1518%) hue-rotate(347deg) brightness(91%) contrast(88%)' }}
             referrerPolicy="no-referrer"
           />
