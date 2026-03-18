@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -6,11 +6,79 @@ import { CompassSVG } from '../components/CompassSVG';
 import { ArrowRight } from 'lucide-react';
 import { Play } from 'lucide-react';
 import { VideoPopup } from '../components/VideoPopup';
+import { TestimonialForm } from '../components/TestimonialForm';
+import type { Testimonial } from '../lib/testimonials';
 import { CookieConsentPopup } from '../components/CookieConsentPopup';
 import { AnalyticsDebug } from '../components/AnalyticsDebug';
 
 export const Home: React.FC = () => {
   const { t } = useLanguage();
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/testimonials?status=approved')
+      .then(res => res.json())
+      .then(data => {
+        setTestimonials(data.testimonials || []);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching testimonials:', err);
+        setLoading(false);
+      });
+  }, []);
+
+  // Fallback testimonials if none from API
+  const fallbackTestimonials = [
+    {
+      id: 1,
+      name: 'Sarah Klein',
+      email: '',
+      message: "Amitabh's consultation completely changed our home office setup. My productivity has increased significantly, and I feel more focused throughout the day. The Vastu adjustments were simple but incredibly effective.",
+      status: 'approved' as const,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    },
+    {
+      id: 2,
+      name: 'Markus Weber',
+      email: '',
+      message: "After implementing Amitabh's recommendations, my sleep quality improved dramatically. I was skeptical at first, but the bedroom repositioning made a real difference. Highly recommended for anyone struggling with restlessness.",
+      status: 'approved' as const,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    },
+    {
+      id: 3,
+      name: 'Laura Fischer',
+      email: '',
+      message: "Our family relationships have become much more harmonious since the consultation. The living room adjustments created a more peaceful atmosphere. Amitabh understood our needs perfectly and provided practical solutions.",
+      status: 'approved' as const,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    },
+    {
+      id: 4,
+      name: 'Raj Patel',
+      email: '',
+      message: "As someone familiar with Vastu, I was impressed by Amitabh's modern approach. He blended traditional wisdom with contemporary living seamlessly. My business has seen noticeable growth since the office consultation.",
+      status: 'approved' as const,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    },
+    {
+      id: 5,
+      name: 'Anita Sharma',
+      email: '',
+      message: "Amitabh's Cosmiq Report was incredibly detailed and accurate. The personalized blueprint helped me understand my strengths and challenges. His guidance on spatial alignment has brought clarity and balance to my life.",
+      status: 'approved' as const,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    }
+  ];
+
+  const displayTestimonials = testimonials.length > 0 ? testimonials : fallbackTestimonials;
 
   return (
     <div className="pt-32">
@@ -194,8 +262,11 @@ export const Home: React.FC = () => {
       {/* Testimonials Section */}
       <section className="py-24 bg-softwhite overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-12">
-          <h2 className="text-4xl md:text-5xl font-display font-medium text-center mb-4">{t.testimonials.title}</h2>
-          <p className="text-charcoal/60 text-center max-w-2xl mx-auto">{t.testimonials.subtitle}</p>
+          <h2 className="text-4xl md:text-5xl font-display font-medium text-center mb-4">What Our Clients Say</h2>
+          <p className="text-charcoal/60 text-center max-w-2xl mx-auto">Real experiences from people who transformed their spaces and lives</p>
+          <div className="flex justify-center mt-6">
+            <TestimonialForm />
+          </div>
         </div>
         
         <div className="relative">
@@ -206,18 +277,17 @@ export const Home: React.FC = () => {
           >
             {[...Array(2)].map((_, setIndex) => (
               <React.Fragment key={setIndex}>
-                {t.testimonials.clients.map((client, idx) => (
-                  <div key={idx} className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
+                {displayTestimonials.map((testimonial) => (
+                  <div key={`${setIndex}-${testimonial.id}`} className="w-80 flex-shrink-0 bg-white rounded-2xl p-6 shadow-lg border border-charcoal/5">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
-                        <span className="text-bronze font-bold">{client.initials}</span>
+                        <span className="text-bronze font-bold">{testimonial.name.split(' ').map(n => n[0]).join('')}</span>
                       </div>
                       <div>
-                        <h4 className="font-display font-medium">{client.name}</h4>
-                        <p className="text-xs text-charcoal/60">{client.location}</p>
+                        <h4 className="font-display font-medium">{testimonial.name}</h4>
                       </div>
                     </div>
-                    <p className="text-sm text-charcoal/70 leading-relaxed">"{client.content}"</p>
+                    <p className="text-sm text-charcoal/70 leading-relaxed">"{testimonial.message}"</p>
                     <div className="mt-4 flex text-bronze text-sm">★★★★★</div>
                   </div>
                 ))}
