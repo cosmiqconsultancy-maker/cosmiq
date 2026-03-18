@@ -18,6 +18,7 @@ import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
 import { CookieConsent } from './pages/CookieConsent';
 import { AdminTestimonials } from './pages/AdminTestimonials';
+import { AdminBlogs } from './pages/AdminBlogs';
 import { AnimatePresence, motion } from 'motion/react';
 
 function ScrollToTop() {
@@ -154,6 +155,19 @@ function AppContent() {
                   transition={{ duration: 0.5 }}
                 >
                   <AdminTestimonials />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/admin/blogs" 
+              element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <AdminBlogs />
                 </motion.div>
               } 
             />
