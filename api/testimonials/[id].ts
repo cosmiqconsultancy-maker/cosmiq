@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { testimonials, type Testimonial } from '../../src/lib/shared-storage.js';
+import { testimonials, type Testimonial } from '../shared-storage.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
