@@ -8,8 +8,6 @@ import { Play } from 'lucide-react';
 import { VideoPopup } from '../components/VideoPopup';
 import { TestimonialForm } from '../components/TestimonialForm';
 import type { Testimonial } from '../lib/testimonials';
-import { CookieConsentPopup } from '../components/CookieConsentPopup';
-import { AnalyticsDebug } from '../components/AnalyticsDebug';
 
 export const Home: React.FC = () => {
   const { t } = useLanguage();
@@ -296,9 +294,6 @@ export const Home: React.FC = () => {
           </motion.div>
         </div>
       </section>
-
-      <AnalyticsDebug />
-      <CookieConsentPopup />
 
       </div>
   );
