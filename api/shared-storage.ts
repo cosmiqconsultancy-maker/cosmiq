@@ -1,15 +1,5 @@
 // Shared in-memory storage for Vercel
-export interface Testimonial {
-  id: number;
-  name: string;
-  email: string;
-  message: string;
-  status: 'pending' | 'approved' | 'rejected';
-  created_at: string;
-  updated_at: string;
-}
-
-export let testimonials: Testimonial[] = [];
+export let testimonials = [];
 
 // Initialize with some sample data
 testimonials = [
