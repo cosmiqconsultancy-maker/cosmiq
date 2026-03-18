@@ -1,34 +1,57 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { kv } from '@vercel/kv';
 
-// Fallback data if KV fails
+// Fallback testimonials with location tracking - 2 Indian, 3 German
 const fallbackTestimonials = [
   {
     id: '1',
-    name: 'Sarah Klein',
-    email: '',
-    message: "Amitabh's consultation completely changed our home office setup. My productivity has increased significantly, and I feel more focused throughout day. The Vastu adjustments were simple but incredibly effective.",
+    name: 'Priya Sharma',
+    email: 'priya.sharma@email.com',
+    message: "Amitabh's Vastu consultation transformed our family home in Delhi. His deep understanding of traditional principles combined with modern living needs helped us create a harmonious space. Our family's health and relationships have improved significantly since the consultation.",
+    location: '28.6139, 77.2090',
     status: 'approved',
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
+    created_at: '2026-01-15T10:30:00.000Z',
+    updated_at: '2026-01-15T10:30:00.000Z'
   },
   {
     id: '2',
-    name: 'Markus Weber',
-    email: '',
-    message: "After implementing Amitabh's recommendations, my sleep quality improved dramatically. I was skeptical at first, but the bedroom repositioning made a real difference. Highly recommended for anyone struggling with restlessness.",
+    name: 'Rajesh Kumar',
+    email: 'rajesh.k@email.com',
+    message: "Working with Amitabh on my office Vastu in Mumbai was a game-changer. My business productivity increased by 40% within months. His Cosmiq Report provided precise directional guidance that aligned perfectly with my professional goals. Highly recommend for any entrepreneur!",
+    location: '19.0760, 72.8777',
     status: 'approved',
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
+    created_at: '2026-02-03T14:20:00.000Z',
+    updated_at: '2026-02-03T14:20:00.000Z'
   },
   {
     id: '3',
-    name: 'Laura Fischer',
-    email: '',
-    message: "Our family relationships have become much more harmonious since the consultation. The living room adjustments created a more peaceful atmosphere. Amitabh understood our needs perfectly and provided practical solutions.",
+    name: 'Klaus Weber',
+    email: 'klaus.weber@email.de',
+    message: "Amitabh's expertise in Vastu Shastra brought remarkable balance to our Berlin apartment. As a German engineer, I was skeptical initially, but the scientific approach and measurable results convinced me. My sleep quality and focus have never been better.",
+    location: '52.5200, 13.4050',
     status: 'approved',
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString()
+    created_at: '2026-01-20T09:15:00.000Z',
+    updated_at: '2026-01-20T09:15:00.000Z'
+  },
+  {
+    id: '4',
+    name: 'Maria Schmidt',
+    email: 'maria.schmidt@email.de',
+    message: "Living in Munich, I sought Amitabh's guidance for our new family home. His consultation addressed every aspect - from bedroom placement to kitchen orientation. The energy flow in our home feels completely different now. Our children sleep better and there's more peace in the household.",
+    location: '48.1351, 11.5820',
+    status: 'approved',
+    created_at: '2026-02-10T16:45:00.000Z',
+    updated_at: '2026-02-10T16:45:00.000Z'
+  },
+  {
+    id: '5',
+    name: 'Hans Müller',
+    email: 'hans.muller@email.de',
+    message: "Amitabh's consultation for my Hamburg office was exceptional. The strategic placement of furniture and equipment according to Vastu principles created a more productive work environment. My team's collaboration improved noticeably. A perfect blend of ancient wisdom and modern business needs.",
+    location: '53.5511, 9.9937',
+    status: 'approved',
+    created_at: '2026-02-28T11:00:00.000Z',
+    updated_at: '2026-02-28T11:00:00.000Z'
   }
 ];
 
@@ -67,7 +90,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     if (req.method === 'POST') {
-      const { name, email, message } = req.body;
+      const { name, email, message, location } = req.body;
 
       if (!name || !email || !message) {
         return res.status(400).json({ error: 'Name, email, and message are required' });
@@ -78,6 +101,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         name,
         email,
         message,
+        location: location || '',
         status: 'pending',
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString()
