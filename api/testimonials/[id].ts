@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { updateTestimonial, deleteTestimonial } from '../../src/lib/storage.js';
+import { updateTestimonial, deleteTestimonial } from '../../src/lib/file-storage.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -30,7 +30,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const { action } = req.body;
 
       if (action === 'approve') {
-        const testimonial = updateTestimonial(testimonialId, { status: 'approved' });
+        const testimonial = await updateTestimonial(testimonialId, { status: 'approved' });
         if (testimonial) {
           console.log(`Testimonial ${testimonialId} approved`);
           return res.status(200).json({ success: true, testimonial });
@@ -38,7 +38,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
 
       if (action === 'reject') {
-        const testimonial = updateTestimonial(testimonialId, { status: 'rejected' });
+        const testimonial = await updateTestimonial(testimonialId, { status: 'rejected' });
         if (testimonial) {
           console.log(`Testimonial ${testimonialId} rejected`);
           return res.status(200).json({ success: true, testimonial });
@@ -54,7 +54,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (req.method === 'DELETE') {
     try {
-      const success = deleteTestimonial(testimonialId);
+      const success = await deleteTestimonial(testimonialId);
       if (success) {
         console.log(`Testimonial ${testimonialId} deleted`);
         return res.status(200).json({ success: true });

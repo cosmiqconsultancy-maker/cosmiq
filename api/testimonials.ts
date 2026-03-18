@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getStoredTestimonials, addTestimonial } from '../src/lib/storage.js';
+import { getTestimonials, addTestimonial } from '../src/lib/file-storage.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -14,12 +14,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === 'GET') {
     try {
       const { status } = req.query;
-      let testimonials = getStoredTestimonials();
-      
-      if (status) {
-        testimonials = testimonials.filter(t => t.status === status);
-      }
-      
+      const testimonials = await getTestimonials(status as string);
       return res.status(200).json({ testimonials });
     } catch (error) {
       console.error('Error fetching testimonials:', error);
@@ -35,7 +30,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(400).json({ error: 'Name, email, and message are required' });
       }
 
-      const testimonial = addTestimonial({ name, email, message });
+      const testimonial = await addTestimonial(name, email, message);
       console.log('New testimonial submitted:', testimonial);
 
       return res.status(200).json({ success: true, testimonial });
