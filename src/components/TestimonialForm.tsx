@@ -12,11 +12,7 @@ export const TestimonialForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const apiUrl = process.env.NODE_ENV === 'development' 
-        ? 'http://localhost:3001/api/testimonials'
-        : '/api/testimonials';
-        
-      const response = await fetch(apiUrl, {
+      const response = await fetch('/api/testimonials', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

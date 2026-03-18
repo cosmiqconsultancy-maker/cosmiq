@@ -18,10 +18,7 @@ export const AdminTestimonials: React.FC = () => {
     setLoading(true);
     try {
       const statusParam = filter !== 'all' ? `?status=${filter}` : '';
-      const baseUrl = process.env.NODE_ENV === 'development' 
-        ? 'http://localhost:3001' 
-        : '';
-      const response = await fetch(`${baseUrl}/api/testimonials${statusParam}`);
+      const response = await fetch(`/api/testimonials${statusParam}`);
       const data = await response.json();
       setTestimonials(data.testimonials);
     } catch (error) {
@@ -33,10 +30,7 @@ export const AdminTestimonials: React.FC = () => {
 
   const handleAction = async (id: number, action: 'approve' | 'reject') => {
     try {
-      const baseUrl = process.env.NODE_ENV === 'development' 
-        ? 'http://localhost:3001' 
-        : '';
-      const response = await fetch(`${baseUrl}/api/testimonials/${id}`, {
+      const response = await fetch(`/api/testimonials/${id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,10 +42,12 @@ export const AdminTestimonials: React.FC = () => {
       if (response.ok) {
         fetchTestimonials();
       } else {
-        alert('Failed to update testimonial');
+        const error = await response.json();
+        alert(`Failed to update testimonial: ${error.error || 'Unknown error'}`);
       }
     } catch (error) {
       console.error('Error updating testimonial:', error);
+      alert('Failed to update testimonial');
     }
   };
 
@@ -59,10 +55,7 @@ export const AdminTestimonials: React.FC = () => {
     if (!confirm('Are you sure you want to delete this testimonial?')) return;
 
     try {
-      const baseUrl = process.env.NODE_ENV === 'development' 
-        ? 'http://localhost:3001' 
-        : '';
-      const response = await fetch(`${baseUrl}/api/testimonials/${id}`, {
+      const response = await fetch(`/api/testimonials/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${password}`
@@ -72,10 +65,12 @@ export const AdminTestimonials: React.FC = () => {
       if (response.ok) {
         fetchTestimonials();
       } else {
-        alert('Failed to delete testimonial');
+        const error = await response.json();
+        alert(`Failed to delete testimonial: ${error.error || 'Unknown error'}`);
       }
     } catch (error) {
       console.error('Error deleting testimonial:', error);
+      alert('Failed to delete testimonial');
     }
   };
 
