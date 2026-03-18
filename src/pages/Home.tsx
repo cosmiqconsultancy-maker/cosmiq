@@ -25,8 +25,17 @@ export const Home: React.FC = () => {
       })
       .then(data => {
         console.log('API data received:', data);
-        console.log('Testimonials count:', data.testimonials?.length || 0);
-        setTestimonials(data.testimonials || []);
+        
+        // Handle both formats: { testimonials: [] } or direct array
+        let list = [];
+        if (Array.isArray(data)) {
+          list = data;
+        } else if (data.testimonials) {
+          list = data.testimonials;
+        }
+        
+        console.log('Processed testimonials:', list.length);
+        setTestimonials(list);
         setLoading(false);
       })
       .catch(err => {
@@ -84,7 +93,8 @@ export const Home: React.FC = () => {
     }
   ];
 
-  const displayTestimonials = testimonials.length > 0 ? testimonials : fallbackTestimonials;
+  // Only use fallback during loading, not when API returns empty
+  const displayTestimonials = loading ? fallbackTestimonials : (testimonials.length > 0 ? testimonials : fallbackTestimonials);
 
   return (
     <div className="pt-32">
