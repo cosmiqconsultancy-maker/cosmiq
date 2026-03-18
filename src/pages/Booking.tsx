@@ -118,7 +118,7 @@ export const Booking: React.FC = () => {
                 </div>
               )}
               <iframe 
-                src="https://calendly.com/vrushikamishra/30min?embed_domain=localhost&embed_type=Inline" 
+                src="https://calendly.com/vrushikamishra/new-meeting?embed_domain=localhost&embed_type=Inline" 
                 width="100%" 
                 height="100%" 
                 frameBorder="0"
