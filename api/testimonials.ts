@@ -48,15 +48,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       
       try {
         testimonials = await kv.get('testimonials') || [];
+        console.log('KV GET success, count:', testimonials.length);
       } catch (kvError) {
         console.log('KV error, using fallback:', kvError);
         testimonials = fallbackTestimonials;
       }
       
+      console.log('Returning testimonials:', testimonials.length, 'items');
+      
       const { status } = req.query;
       let filteredTestimonials = testimonials;
       if (status) {
         filteredTestimonials = testimonials.filter((t: any) => t.status === status);
+        console.log('Filtered by status', status, ':', filteredTestimonials.length, 'items');
       }
       
       return res.status(200).json({ testimonials: filteredTestimonials });
