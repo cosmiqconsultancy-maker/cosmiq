@@ -50,7 +50,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { id } = req.query;
 
     // Auth check
-    if (req.headers.authorization !== `Bearer ${ADMIN_PASS}`) {
+    const authHeader = req.headers.authorization;
+    console.log('Auth check:', { received: authHeader?.substring(0, 20) + '...', expected: `Bearer ${ADMIN_PASS}`.substring(0, 20) + '...' });
+    
+    if (authHeader !== `Bearer ${ADMIN_PASS}`) {
       return res.status(401).json({ error: 'Unauthorized' });
     }
 
