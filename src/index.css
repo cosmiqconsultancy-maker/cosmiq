@@ -14,7 +14,7 @@
 
 @layer base {
   body {
-    @apply bg-beige text-charcoal font-sans antialiased cursor-none;
+    @apply bg-beige text-charcoal font-sans antialiased;
   }
   
   h1, h2, h3, h4 {
