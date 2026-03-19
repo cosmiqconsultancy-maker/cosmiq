@@ -8,7 +8,6 @@ import { useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { CustomCursor } from './components/CustomCursor';
 import { Home } from './pages/Home';
 import { Services } from './pages/Services';
 import { Blogs } from './pages/Blogs';
@@ -35,7 +34,6 @@ function AppContent() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <CustomCursor />
       <Header />
       <ScrollToTop />
       <main className="flex-grow">

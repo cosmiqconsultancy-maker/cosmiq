@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
-import { CompassSVG } from '../components/CompassSVG';
 import { ArrowRight } from 'lucide-react';
 import { Play } from 'lucide-react';
 import { VideoPopup } from '../components/VideoPopup';
@@ -150,7 +149,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div className="order-2 lg:order-1 flex justify-center">
-              <CompassSVG className="w-64 h-64 md:w-96 md:h-96 text-bronze/40" />
+              {/* Removed compass for cleaner design */}
             </div>
             
             <div className="order-1 lg:order-2 space-y-8">
