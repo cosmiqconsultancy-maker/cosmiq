@@ -10,7 +10,7 @@ export const translations = {
       bookNow: 'Book Appointment',
     },
     hero: {
-      heading: 'Optimize Your Home & Workspace for Harmony, Focus & Growth ',
+      heading: 'Optimize Your Home & Workspace for Harmony, Focus & Growth.',
       subheading: 'I, Amitabh help individuals and businesses optimize their homes and workspaces using spatial alignment principles derived from the ancient architectural science of Vastu Shastra.',
       cta: 'Book Your Free 20-Minute Assessment',
       tagline: 'Where Energy Meets Architecture',
