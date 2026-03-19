@@ -35,16 +35,56 @@ const fallbackTestimonials = [
   },
   {
     id: '4',
+    name: 'Anjali Patel',
+    email: 'anjali.p@email.com',
+    message: "The Vastu consultation for our Bangalore tech startup office was incredible. Team collaboration improved dramatically after implementing Amitabh's suggestions. Our energy levels and creativity have soared. The investment has paid for itself many times over!",
+    location: '12.9716, 77.5946',
+    status: 'approved',
+    created_at: '2026-02-18T11:45:00.000Z',
+    updated_at: '2026-02-18T11:45:00.000Z'
+  },
+  {
+    id: '5',
+    name: 'Hans Mueller',
+    email: 'hans.mueller@email.de',
+    message: "Amitabh's Vastu guidance for our Munich home exceeded all expectations. The positive energy shift was immediately noticeable. My children's concentration improved, and family harmony increased remarkably. Professional, thorough, and deeply knowledgeable.",
+    location: '48.1351, 11.5820',
+    status: 'approved',
+    created_at: '2026-02-25T16:30:00.000Z',
+    updated_at: '2026-02-25T16:30:00.000Z'
+  },
+  {
+    id: '6',
+    name: 'Meera Reddy',
+    email: 'meera.reddy@email.com',
+    message: "The personalized Vastu consultation for our Hyderabad residence was life-changing. Amitabh's attention to detail and cultural sensitivity made the process seamless. Our home now feels perfectly aligned with our family's energy and aspirations.",
+    location: '17.3850, 78.4867',
+    status: 'approved',
+    created_at: '2026-03-02T13:20:00.000Z',
+    updated_at: '2026-03-02T13:20:00.000Z'
+  },
+  {
+    id: '7',
+    name: 'Greta Schmidt',
+    email: 'greta.schmidt@email.de',
+    message: "As a healthcare professional in Hamburg, I was impressed by Amitabh's systematic approach to Vastu. The improvements in my clinic's patient flow and staff well-being have been remarkable. His recommendations were practical and immediately implementable.",
+    location: '53.5511, 9.9937',
+    status: 'approved',
+    created_at: '2026-03-08T10:10:00.000Z',
+    updated_at: '2026-03-08T10:10:00.000Z'
+  },
+  {
+    id: '8',
     name: 'Maria Schmidt',
     email: 'maria.schmidt@email.de',
-    message: "Living in Munich, I sought Amitabh's guidance for our new family home. His consultation addressed every aspect - from bedroom placement to kitchen orientation. The energy flow in our home feels completely different now. Our children sleep better and there's more peace in the household.",
+    message: "Living in Munich, I sought Amitabh's guidance for our new family home. His consultation addressed every aspect - from bedroom placement to kitchen orientation. The energy flow in our home feels completely different now. Our children sleep better and there's more peace in household.",
     location: '48.1351, 11.5820',
     status: 'approved',
     created_at: '2026-02-10T16:45:00.000Z',
     updated_at: '2026-02-10T16:45:00.000Z'
   },
   {
-    id: '5',
+    id: '9',
     name: 'Hans Müller',
     email: 'hans.muller@email.de',
     message: "Amitabh's consultation for my Hamburg office was exceptional. The strategic placement of furniture and equipment according to Vastu principles created a more productive work environment. My team's collaboration improved noticeably. A perfect blend of ancient wisdom and modern business needs.",
