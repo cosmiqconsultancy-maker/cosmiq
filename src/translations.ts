@@ -262,6 +262,10 @@ export const translations = {
         dob: 'Date of Birth (optional)',
         pob: 'Place of Birth (optional)',
         submit: 'Request Appointment'
+      },
+      privacyNotice: {
+        title: 'Privacy Notice',
+        text: 'Your privacy is important to us. The information you provide will only be used to schedule and conduct your consultation. We do not share your data with third parties. By booking an appointment, you agree to our terms and privacy policy.'
       }
     },
     footer: {
@@ -786,6 +790,10 @@ export const translations = {
         dob: 'Geburtsdatum (optional)',
         pob: 'Geburtsort (optional)',
         submit: 'Termin anfragen'
+      },
+      privacyNotice: {
+        title: 'Datenschutzhinweis',
+        text: 'Ihre Privatsphäre ist uns wichtig. Die von Ihnen bereitgestellten Informationen werden nur zur Terminplanung und Durchführung Ihrer Beratung verwendet. Wir geben Ihre Daten nicht an Dritte weiter. Mit der Buchung eines Termins stimmen Sie unseren AGB und Datenschutzbestimmungen zu.'
       }
     },
     footer: {
