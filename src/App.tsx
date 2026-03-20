@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { CookieConsentPopup } from './components/CookieConsentPopup';
 import { Home } from './pages/Home';
 import { Services } from './pages/Services';
 import { Blogs } from './pages/Blogs';
@@ -188,6 +189,7 @@ function AppContent() {
       </AnimatePresence>
     </main>
       <Footer />
+      <CookieConsentPopup />
     </div>
   );
 }
