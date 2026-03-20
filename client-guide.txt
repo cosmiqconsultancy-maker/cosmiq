@@ -1,0 +1,44 @@
+CLIENT GUIDE - COSMIQ WEBSITE MANAGEMENT
+
+LOGIN DETAILS
+Gmail: cosmiqconsultancy@gmail.com
+Password: Cosmiq@123
+Use Google login for Vercel and GitHub
+
+ADMIN ACCESS
+Password: Cosmiq@consultancy.pass
+Admin URLs:
+- Testimonials: /admin/testimonials
+- Blogs: /admin/blogs
+
+EDITING TESTIMONIALS
+1. Go to /admin/testimonials
+2. Enter password: Cosmiq@consultancy.pass
+3. Approve/Reject pending testimonials
+4. Delete any testimonial with trash icon
+
+EDITING BLOGS
+1. Go to /admin/blogs
+2. Enter password: Cosmiq@consultancy.pass
+3. Create new blog: Click "Add New Blog"
+4. Edit blog: Click "Edit" on any blog
+5. Delete blog: Click trash icon
+
+NEW EDITOR SETUP
+Repository: https://github.com/cosmiqconsultancy-maker/cosmiq.git
+Instructions:
+- Clone repository
+- Install dependencies: npm install
+- Set up Vercel environment variables
+- Deploy to Vercel
+
+VERCEL ENVIRONMENT SETUP
+Required Environment Variables:
+- KV_URL=redis://default:password@redis-url
+- KV_REST_API_URL=https://redis-id.kv.vercel-storage.com
+- KV_REST_API_TOKEN=your-token-here
+- ADMIN_PASS=Cosmiq@consultancy.pass
+
+IMPORTANT NOTES
+- Never share admin password publicly
+- Change password in Vercel environment if needed
