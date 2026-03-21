@@ -81,39 +81,38 @@ export const Booking: React.FC = () => {
               </div>
             </div>
 
-            {/* Privacy Notice */}
-            <div className="mt-12 p-6 bg-bronze/5 border border-bronze/20 rounded-2xl">
-              <h3 className="text-lg font-display font-medium text-bronze mb-3">{t.booking.privacyNotice.title}</h3>
-              <p className="text-charcoal/70 text-sm leading-relaxed font-medium">
-                {t.booking.privacyNotice.text}
-              </p>
-            </div>
-
             <div className="pt-8 border-t border-charcoal/10">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-bronze">Cosmiq Consulting Munich</p>
             </div>
           </div>
 
-          {/* Right Side: Booking Button */}
-          <div className="bg-softwhite rounded-3xl shadow-2xl border border-charcoal/5 overflow-hidden flex flex-col">
-            <div className="p-6 bg-bronze/10 border-b border-charcoal/5 flex-shrink-0">
-              <div className="flex items-center gap-3">
-                <Calendar className="w-6 h-6 text-bronze" />
-                <div>
-                  <h3 className="text-xl font-display font-medium">Book Your Consultation</h3>
-                  <p className="text-charcoal/60 text-sm">Click below to schedule your meeting</p>
-                </div>
-              </div>
+          {/* Right Side: Privacy Notice and Booking Button */}
+          <div className="flex flex-col space-y-6">
+            {/* Privacy Notice Block */}
+            <div className="bg-sand/5 p-6 md:p-8 rounded-3xl border border-charcoal/5">
+              <h3 className="text-lg font-display font-medium text-bronze mb-3">Privacy Notice</h3>
+              <p className="text-charcoal/70 text-sm leading-relaxed font-medium">
+                Your privacy is important to us. The information you provide will only be used to schedule and conduct your consultation. We do not share your data with third parties. By booking an appointment, you agree to our terms and privacy policy.
+              </p>
             </div>
-            <div className="flex-1 flex items-center justify-center p-8">
-              <motion.button
-                onClick={() => window.open('https://calendly.com/vrushikamishra/new-meeting', '_blank')}
-                className="px-8 py-4 bg-bronze text-softwhite font-display font-medium rounded-2xl hover:bg-bronze/90 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Schedule Your Meeting
-              </motion.button>
+            
+            {/* Booking Button Block */}
+            <div className="bg-sand/5 p-6 md:p-8 rounded-3xl border border-charcoal/5">
+              <div className="text-center space-y-6">
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-display font-medium mb-3">Book Your 20-Minute Consulting Session</h2>
+                  <p className="text-base md:text-lg text-charcoal/60">Click here to book your 20 mins consulting session</p>
+                </div>
+                
+                <motion.button
+                  onClick={() => window.open('https://calendly.com/vrushikamishra/new-meeting', '_blank')}
+                  className="px-10 py-5 bg-bronze text-softwhite font-display font-medium text-lg rounded-2xl hover:bg-bronze/90 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Schedule Your Meeting
+                </motion.button>
+              </div>
             </div>
           </div>
         </div>
