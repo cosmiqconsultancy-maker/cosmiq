@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { Calendar, ChevronDown } from 'lucide-react';
@@ -8,6 +8,17 @@ export const Booking: React.FC = () => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const [clickedStep, setClickedStep] = useState<number | null>(null);
   const [recentlyClosed, setRecentlyClosed] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleStepClick = (i: number) => {
     if (clickedStep === i) {
@@ -37,7 +48,7 @@ export const Booking: React.FC = () => {
                 <div className="absolute left-4 top-2 bottom-2 w-px bg-bronze/20 hidden md:block" />
                 
                 {t.booking.steps.map((step, i) => {
-                  const isExpanded = clickedStep === i || (hoveredStep === i && clickedStep === null && recentlyClosed !== i);
+                  const isExpanded = clickedStep === i || (!isMobile && hoveredStep === i && clickedStep === null && recentlyClosed !== i);
                   return (
                     <motion.div 
                       key={i} 
@@ -45,7 +56,7 @@ export const Booking: React.FC = () => {
                       onClick={() => handleStepClick(i)}
                       onMouseEnter={() => setHoveredStep(i)}
                       onMouseLeave={() => setHoveredStep(null)}
-                      whileHover={{ x: window.innerWidth >= 768 ? 4 : 0 }}
+                      whileHover={{ x: !isMobile ? 4 : 0 }}
                       transition={{ duration: 0.2 }}
                     >
                       <div className="absolute left-0 top-1 w-8 h-8 rounded-full bg-beige border-2 border-bronze flex items-center justify-center z-10 group-hover:bg-bronze group-hover:border-bronze transition-colors hidden md:flex">
