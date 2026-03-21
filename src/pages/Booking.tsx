@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
-import { Calendar, ChevronDown, Loader2 } from 'lucide-react';
+import { Calendar, ChevronDown } from 'lucide-react';
 
 export const Booking: React.FC = () => {
   const { t } = useLanguage();
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const [clickedStep, setClickedStep] = useState<number | null>(null);
   const [recentlyClosed, setRecentlyClosed] = useState<number | null>(null);
-  const [calendlyLoading, setCalendlyLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCalendlyLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleStepClick = (i: number) => {
     if (clickedStep === i) {
@@ -102,38 +94,26 @@ export const Booking: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side: Calendly Widget */}
+          {/* Right Side: Booking Button */}
           <div className="bg-softwhite rounded-3xl shadow-2xl border border-charcoal/5 overflow-hidden flex flex-col">
             <div className="p-6 bg-bronze/10 border-b border-charcoal/5 flex-shrink-0">
               <div className="flex items-center gap-3">
                 <Calendar className="w-6 h-6 text-bronze" />
                 <div>
                   <h3 className="text-xl font-display font-medium">Book Your Consultation</h3>
-                  <p className="text-charcoal/60 text-sm">Select a time slot below</p>
+                  <p className="text-charcoal/60 text-sm">Click below to schedule your meeting</p>
                 </div>
               </div>
             </div>
-            <div className="flex-1 relative min-h-[700px]">
-              {calendlyLoading && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-softwhite z-10">
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                  >
-                    <Loader2 className="w-12 h-12 text-bronze" />
-                  </motion.div>
-                  <p className="mt-4 text-charcoal/60 text-sm">Loading calendar...</p>
-                </div>
-              )}
-              <iframe 
-                src="https://calendly.com/vrushikamishra/new-meeting?embed_domain=localhost&embed_type=Inline" 
-                width="100%" 
-                height="100%" 
-                frameBorder="0"
-                scrolling="auto"
-                title="Calendly Scheduling"
-                className="bg-white absolute inset-0"
-              />
+            <div className="flex-1 flex items-center justify-center p-8">
+              <motion.button
+                onClick={() => window.open('https://calendly.com/vrushikamishra/new-meeting', '_blank')}
+                className="px-8 py-4 bg-bronze text-softwhite font-display font-medium rounded-2xl hover:bg-bronze/90 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Schedule Your Meeting
+              </motion.button>
             </div>
           </div>
         </div>
