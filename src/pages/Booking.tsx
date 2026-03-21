@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
-import { Calendar, ChevronDown } from 'lucide-react';
+import { Calendar, ChevronDown, Loader2 } from 'lucide-react';
 
 export const Booking: React.FC = () => {
   const { t } = useLanguage();
@@ -9,6 +9,7 @@ export const Booking: React.FC = () => {
   const [clickedStep, setClickedStep] = useState<number | null>(null);
   const [recentlyClosed, setRecentlyClosed] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [calendlyLoading, setCalendlyLoading] = useState(true);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -19,6 +20,30 @@ export const Booking: React.FC = () => {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCalendlyLoading(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Auto-scroll to Calendly form on mobile devices
+    if (isMobile) {
+      const scrollTimer = setTimeout(() => {
+        const calendlyElement = document.querySelector('[data-calendly-widget]');
+        if (calendlyElement) {
+          calendlyElement.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'end' 
+          });
+        }
+      }, 500); // Small delay to ensure page is loaded
+      
+      return () => clearTimeout(scrollTimer);
+    }
+  }, [isMobile]);
 
   const handleStepClick = (i: number) => {
     if (clickedStep === i) {
@@ -97,33 +122,38 @@ export const Booking: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side: Privacy Notice and Booking Button */}
-          <div className="flex flex-col space-y-6">
-            {/* Privacy Notice Block */}
-            <div className="bg-sand/5 p-6 md:p-8 rounded-3xl border border-charcoal/5">
-              <h3 className="text-lg font-display font-medium text-bronze mb-3">Privacy Notice</h3>
-              <p className="text-charcoal/70 text-sm leading-relaxed font-medium">
-                Your privacy is important to us. The information you provide will only be used to schedule and conduct your consultation. We do not share your data with third parties. By booking an appointment, you agree to our terms and privacy policy.
-              </p>
-            </div>
-            
-            {/* Booking Button Block */}
-            <div className="bg-sand/5 p-6 md:p-8 rounded-3xl border border-charcoal/5">
-              <div className="text-center space-y-6">
+          {/* Right Side: Calendly Widget */}
+          <div className="bg-softwhite rounded-3xl shadow-2xl border border-charcoal/5 overflow-hidden flex flex-col" data-calendly-widget>
+            <div className="p-6 bg-bronze/10 border-b border-charcoal/5 flex-shrink-0">
+              <div className="flex items-center gap-3">
+                <Calendar className="w-6 h-6 text-bronze" />
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-display font-medium mb-3">Book Your 20-Minute Consulting Session</h2>
-                  <p className="text-base md:text-lg text-charcoal/60">Click here to book your 20 mins consulting session</p>
+                  <h3 className="text-xl font-display font-medium">Book Your Consultation</h3>
+                  <p className="text-charcoal/60 text-sm">Select a time slot below</p>
                 </div>
-                
-                <motion.button
-                  onClick={() => window.open('https://calendly.com/vrushikamishra/new-meeting', '_blank')}
-                  className="px-10 py-5 bg-bronze text-softwhite font-display font-medium text-lg rounded-2xl hover:bg-bronze/90 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Schedule Your Meeting
-                </motion.button>
               </div>
+            </div>
+            <div className="flex-1 relative min-h-[700px]">
+              {calendlyLoading && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-softwhite z-10">
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  >
+                    <Loader2 className="w-12 h-12 text-bronze" />
+                  </motion.div>
+                  <p className="mt-4 text-charcoal/60 text-sm">Loading calendar...</p>
+                </div>
+              )}
+              <iframe 
+                src="https://calendly.com/vrushikamishra/new-meeting?embed_domain=localhost&embed_type=Inline" 
+                width="100%" 
+                height="100%" 
+                frameBorder="0"
+                scrolling="auto"
+                title="Calendly Scheduling"
+                className="bg-white absolute inset-0"
+              />
             </div>
           </div>
         </div>
